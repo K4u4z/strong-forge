@@ -1,6 +1,6 @@
-# Projeto_Integrador3
+# Projeto Integrador3
 
-# Lista de funcionalidades
+Lista de funcionalidades
 
 Objetivo do Projeto
 
