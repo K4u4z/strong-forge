@@ -1,23 +1,46 @@
 # Projeto_Integrador3
 
+# Lista de funcionalidades
 
-Objetivo do projeto: Auxiliar pessoas a terem melhores resultados físicos através das funcionalidades do sistema
+Objetivo do Projeto
 
-1.Cadastro de usuário 
-- Usuário poderá cadastrar suas informações pessoais no sistema, e poder logar posteriormente 
+O projeto tem como objetivo auxiliar pessoas a alcançarem melhores resultados físicos por meio das funcionalidades oferecidas pelo sistema. A plataforma permite o acompanhamento personalizado de treinos, facilita o acesso a profissionais qualificados e proporciona uma experiência interativa e intuitiva para os usuários que desejam melhorar sua condição física.
 
-2.Lista de exercícios 
-- Será exibido para o usuário, uma lista de exercícios para cada grupo muscular 
+Funcionalidades do Sistema
 
-2.1.Criar/alterar/remover lista de exercícios pessoal
-- Usuário pode criar uma lista com os exercícios de sua escolha, que ao ser exibida no sistema poderá manipular de acordo com o sua necessidade 
+1. Cadastro de Usuário
 
-3. Lista de personal
-- É exibido para o usuario uma lista com os personais disponíveis para contato 
+- O usuário pode realizar o cadastro de suas informações pessoais no sistema;
 
-3.1. Contratar personal
-- É possível o usuário fazer o contato com o personal escolhido por ele, caso queira o auxílio de um profissional para ajudar no seu desenvolvimento fisico
+- Uma vez cadastrado, o usuário pode realizar login na plataforma para acessar suas funcionalidades personalizadas.
 
-4. Administração 
-- Fazer controle de usuário, podendo alterar e excluir informações ou o cadastro 
-- Controlar listas: pode fazer inclusão, alteração e exclusão de itens na lista de exercícios
+2. Lista de Exercícios
+
+- O sistema exibe uma lista de exercícios para cada grupo muscular;
+
+- Cada exercício apresenta informações detalhadas, incluindo nome, grupo muscular ao qual pertence e instruções sobre como realizá-lo corretamente.
+
+3. Criar Lista de Exercícios Pessoal
+
+- O usuário pode criar uma lista personalizada de exercícios conforme sua preferência;
+- 
+A lista pode ser visualizada, alterada ou excluída conforme a necessidade do usuário, garantindo maior flexibilidade no planejamento do treino.
+
+4. Grid de Personais
+
+- A plataforma exibe uma lista de personais trainers disponíveis para contato;
+
+- Ao clicar no perfil de um personal, o usuário pode visualizar informações detalhadas, como experiência, especializações e formas de contato;
+
+4.1. Contratar Personal
+
+- O usuário pode entrar em contato com o personal escolhido para obter acompanhamento profissional personalizado;
+
+- A plataforma facilita a interação entre os usuários e os profissionais, promovendo um suporte adequado ao desenvolvimento físico;
+
+5. Administração
+
+- Usuários com permissão administrativa têm acesso a funcionalidades de controle do sistema, incluindo:
+- Gerenciamento de usuários: possibilidade de alterar e excluir cadastros e informações;
+
+- Gerenciamento de listas de exercícios: capacidade de incluir, modificar e remover exercícios da base de dados do sistema.
