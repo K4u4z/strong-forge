@@ -45,12 +45,16 @@ A lista pode ser visualizada, alterada ou excluída conforme a necessidade do us
 
 - Gerenciamento de listas de exercícios: capacidade de incluir, modificar e remover exercícios da base de dados do sistema.
 
-#Diagramas
+# Diagramas
 Diagrama UML
+Atores:
+- Usuario, Administrador e Personal
 
 ![Diagrama (UML) (1)](https://github.com/user-attachments/assets/317b90b6-1d4c-4153-a28e-5460a6fcb43f)
 
 Diagrama entidade relacionamento
+Entidades:
+- Usuario, Personal, Lista de exercicio, Exercicio, Itens da lista pessoal
 
 ![Diagrama entidade relacionamento (1)](https://github.com/user-attachments/assets/a0f39a48-af74-436f-a144-dd9d89ba6dc5)
 
