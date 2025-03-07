@@ -1,12 +1,12 @@
 # Projeto Integrador3
 
-Lista de funcionalidades
+<h2>Lista de funcionalidades</h2>
 
 Objetivo do Projeto
 
 O projeto tem como objetivo auxiliar pessoas a alcançarem melhores resultados físicos por meio das funcionalidades oferecidas pelo sistema. A plataforma permite o acompanhamento personalizado de treinos, facilita o acesso a profissionais qualificados e proporciona uma experiência interativa e intuitiva para os usuários que desejam melhorar sua condição física.
 
-Funcionalidades do Sistema
+<h2>Funcionalidades do Sistema</h2>
 
 1. Cadastro de Usuário
 
@@ -45,13 +45,13 @@ Funcionalidades do Sistema
 - Gerenciamento de listas de exercícios: capacidade de incluir, modificar e remover exercícios da base de dados do sistema.
 
 # Diagramas
-Diagrama UML
+<h2>Diagrama UML</h2>
 1. Atores:
 - Usuario, Administrador e Personal
 
 ![Diagrama (UML) (1)](https://github.com/user-attachments/assets/317b90b6-1d4c-4153-a28e-5460a6fcb43f)
 
-Diagrama entidade relacionamento
+<h2>Diagrama entidade relacionamento</h2>
 1. Entidades:
 - Usuario, Personal, Lista de exercicio, Exercicio, Itens da lista pessoal
 
