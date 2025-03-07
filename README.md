@@ -57,3 +57,6 @@ Diagrama entidade relacionamento
 
 ![Diagrama entidade relacionamento (1)](https://github.com/user-attachments/assets/a0f39a48-af74-436f-a144-dd9d89ba6dc5)
 
+
+# Prototipação
+- Link: https://www.figma.com/design/6fdgDwycb20QVUwaotTB6k/Untitled?node-id=0-1&t=XfcIMB5OSDPwX7Sx-1
