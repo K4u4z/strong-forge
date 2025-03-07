@@ -23,8 +23,7 @@ Funcionalidades do Sistema
 3. Criar Lista de Exercícios Pessoal
 
 - O usuário pode criar uma lista personalizada de exercícios conforme sua preferência;
-- 
-A lista pode ser visualizada, alterada ou excluída conforme a necessidade do usuário, garantindo maior flexibilidade no planejamento do treino.
+- A lista pode ser visualizada, alterada ou excluída conforme a necessidade do usuário, garantindo maior flexibilidade no planejamento do treino.
 
 4. Grid de Personais
 
