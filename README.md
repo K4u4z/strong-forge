@@ -74,6 +74,16 @@ O projeto tem como objetivo auxiliar pessoas a alcançarem melhores resultados f
 
 ![Home](https://github.com/user-attachments/assets/259b0616-7981-4666-b1e5-ae332a845851)
 
+<h2>Tela de Exercicios</h2>
+
+![Exercicios](https://github.com/user-attachments/assets/d480103c-88f3-4177-8d26-34c7798395c6)
+
+<h2>Tela Cronograma de treinos</h2>
+
+![Criar lista](https://github.com/user-attachments/assets/2bc1316d-6c83-40af-9ad2-f84fda1cc799)
+
+
+
 
 
 
