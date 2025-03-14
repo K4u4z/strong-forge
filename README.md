@@ -10,7 +10,7 @@ Objetivo do Projeto
 
 1. Cadastro de Usuário
 <ul>
-  <li></li>O usuário pode realizar o cadastro de suas informações pessoais no sistema;</li>
+  <li>O usuário pode realizar o cadastro de suas informações pessoais no sistema;</li>
 
   <li>Uma vez cadastrado, o usuário pode realizar login na plataforma para acessar suas funcionalidades personalizadas</li>
 </ul>
