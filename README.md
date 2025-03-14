@@ -62,7 +62,7 @@ O projeto tem como objetivo auxiliar pessoas a alcançarem melhores resultados f
 - Link: https://www.figma.com/design/6fdgDwycb20QVUwaotTB6k/Untitled?node-id=0-1&t=XfcIMB5OSDPwX7Sx-1
 
 <h2>Tela de login</h2>
-![Cadastro](https://github.com/user-attachments/assets/d9fc03c9-ccf6-457a-933d-587cc96455d3)
+![Cadastro](https://github.com/user-attachments/assets/d9fc03c9-ccf6-457a-933d-587cc96455d3).
 
 
 
