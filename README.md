@@ -70,6 +70,11 @@ O projeto tem como objetivo auxiliar pessoas a alcançarem melhores resultados f
 
 ![Cadastro](https://github.com/user-attachments/assets/0c14f97f-d4b6-402b-97bc-b44e84044e0d)
 
+<h2>Tela de Home</h2>
+
+![Home](https://github.com/user-attachments/assets/259b0616-7981-4666-b1e5-ae332a845851)
+
+
 
 
 
