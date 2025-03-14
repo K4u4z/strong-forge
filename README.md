@@ -4,45 +4,47 @@
 
 Objetivo do Projeto
 
-O projeto tem como objetivo auxiliar pessoas a alcançarem melhores resultados físicos por meio das funcionalidades oferecidas pelo sistema. A plataforma permite o acompanhamento personalizado de treinos, facilita o acesso a profissionais qualificados e proporciona uma experiência interativa e intuitiva para os usuários que desejam melhorar sua condição física.
+<p>O projeto tem como objetivo auxiliar pessoas a alcançarem melhores resultados físicos por meio das funcionalidades oferecidas pelo sistema. A plataforma permite o acompanhamento personalizado de treinos, facilita o acesso a profissionais qualificados e proporciona uma experiência interativa e intuitiva para os usuários que desejam melhorar sua condição física.</p>
 
 <h2>Funcionalidades do Sistema</h2>
 
 1. Cadastro de Usuário
+<ul>
+  <li></li>O usuário pode realizar o cadastro de suas informações pessoais no sistema;</li>
 
-- O usuário pode realizar o cadastro de suas informações pessoais no sistema;
-
-- Uma vez cadastrado, o usuário pode realizar login na plataforma para acessar suas funcionalidades personalizadas.
-
+  <li>Uma vez cadastrado, o usuário pode realizar login na plataforma para acessar suas funcionalidades personalizadas</li>
+</ul>
 2. Lista de Exercícios
+<ul>
+<li>O sistema exibe uma lista de exercícios para cada grupo muscular;</li>
 
-- O sistema exibe uma lista de exercícios para cada grupo muscular;
-
-- Cada exercício apresenta informações detalhadas, incluindo nome, grupo muscular ao qual pertence e instruções sobre como realizá-lo corretamente.
-
+  <li>Cada exercício apresenta informações detalhadas, incluindo nome, grupo muscular ao qual pertence e instruções sobre como realizá-lo corretamente.</li>
+</ul>
 3. Criar Lista de Exercícios Pessoal
-
-- O usuário pode criar uma lista personalizada de exercícios conforme sua preferência;
-- A lista pode ser visualizada, alterada ou excluída conforme a necessidade do usuário, garantindo maior flexibilidade no planejamento do treino.
+<ul>
+<li>O usuário pode criar uma lista personalizada de exercícios conforme sua preferência;</li>
+ <li>A lista pode ser visualizada, alterada ou excluída conforme a necessidade do usuário, garantindo maior flexibilidade no planejamento do treino.</li>
+</ul>
 
 4. Grid de Personais
+<ul>
+<li>A plataforma exibe uma lista de personais trainers disponíveis para contato;</li>
 
-- A plataforma exibe uma lista de personais trainers disponíveis para contato;
-
-- Ao clicar no perfil de um personal, o usuário pode visualizar informações detalhadas, como experiência, especializações e formas de contato;
-
+  <li>Ao clicar no perfil de um personal, o usuário pode visualizar informações detalhadas, como experiência, especializações e formas de contato;</li>
+</ul>
 4.1. Contratar Personal
+<ul>
+<li>O usuário pode entrar em contato com o personal escolhido para obter acompanhamento profissional personalizado;</li>
 
-- O usuário pode entrar em contato com o personal escolhido para obter acompanhamento profissional personalizado;
-
-- A plataforma facilita a interação entre os usuários e os profissionais, promovendo um suporte adequado ao desenvolvimento físico;
-
+  <li>A plataforma facilita a interação entre os usuários e os profissionais, promovendo um suporte adequado ao desenvolvimento físico;</li>
+</ul>
 5. Administração
 
-- Usuários com permissão administrativa têm acesso a funcionalidades de controle do sistema, incluindo:
-- Gerenciamento de usuários: possibilidade de alterar e excluir cadastros e informações;
-
-- Gerenciamento de listas de exercícios: capacidade de incluir, modificar e remover exercícios da base de dados do sistema.
+<ul>
+<li>Usuários com permissão administrativa têm acesso a funcionalidades de controle do sistema, incluindo:</li>
+<li>Gerenciamento de usuários: possibilidade de alterar e excluir cadastros e informações;</li>
+<li>Gerenciamento de listas de exercícios: capacidade de incluir, modificar e remover exercícios da base de dados do sistema.</li>
+</ul>
 
 # Diagramas
 <h2>Diagrama UML</h2>
@@ -87,7 +89,6 @@ O projeto tem como objetivo auxiliar pessoas a alcançarem melhores resultados f
 <h2>Tela Cronograma de treinos</h2>
 
 ![Cronograma Treino](https://github.com/user-attachments/assets/3dd2fd34-fc00-4d25-904b-8bfb5d9e47c5)
-
 
 <h2>Tela de Personais</h2>
 
