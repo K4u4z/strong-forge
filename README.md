@@ -2,7 +2,7 @@
 
 <h2>Lista de funcionalidades</h2>
 
-Objetivo do Projeto
+<p>Objetivo do Projeto</p>
 
 <p>O projeto tem como objetivo auxiliar pessoas a alcançarem melhores resultados físicos por meio das funcionalidades oferecidas pelo sistema. A plataforma permite o acompanhamento personalizado de treinos, facilita o acesso a profissionais qualificados e proporciona uma experiência interativa e intuitiva para os usuários que desejam melhorar sua condição física.</p>
 
@@ -39,7 +39,6 @@ Objetivo do Projeto
   <li>A plataforma facilita a interação entre os usuários e os profissionais, promovendo um suporte adequado ao desenvolvimento físico;</li>
 </ul>
 5. Administração
-
 <ul>
 <li>Usuários com permissão administrativa têm acesso a funcionalidades de controle do sistema, incluindo:</li>
 <li>Gerenciamento de usuários: possibilidade de alterar e excluir cadastros e informações;</li>
@@ -48,14 +47,14 @@ Objetivo do Projeto
 
 # Diagramas
 <h2>Diagrama UML</h2>
-1. Atores:
-- Usuario, Administrador e Personal
+<p>1. Atores:</p>
+<p>- Usuario, Administrador e Personal</p>
 
 ![Diagrama (UML) (1)](https://github.com/user-attachments/assets/317b90b6-1d4c-4153-a28e-5460a6fcb43f)
 
 <h2>Diagrama entidade relacionamento (DER)</h2>
 1. Entidades:
-- Usuario, Personal, Lista de exercicio, Exercicio, Itens da lista pessoal e contrato_personal_usuario
+<p>- Usuario, Personal, Lista de exercicio, Exercicio, Itens da lista pessoal e contrato_personal_usuario
 
 ![Diagrama entidade relacionamento ](https://github.com/user-attachments/assets/12a7e5c7-0622-4799-a9b6-be171c00e1fe)
 
