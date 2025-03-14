@@ -55,7 +55,7 @@ O projeto tem como objetivo auxiliar pessoas a alcançarem melhores resultados f
 1. Entidades:
 - Usuario, Personal, Lista de exercicio, Exercicio, Itens da lista pessoal
 
-![Diagrama entidade relacionamento (1)](https://github.com/user-attachments/assets/a0f39a48-af74-436f-a144-dd9d89ba6dc5)
+![Diagrama entidade relacionamento ](https://github.com/user-attachments/assets/12a7e5c7-0622-4799-a9b6-be171c00e1fe)
 
 # Prototipação das Telas
 
@@ -90,6 +90,9 @@ O projeto tem como objetivo auxiliar pessoas a alcançarem melhores resultados f
 
 ![Perfil personal](https://github.com/user-attachments/assets/5408f8b6-fc01-4669-bd94-ff62e517c8f3)
 
+<h2>Tela de exercicio</h2>
+
+![Exercicio](https://github.com/user-attachments/assets/23fd9877-efcd-4268-a895-6678a219f90d)
 
 
 
