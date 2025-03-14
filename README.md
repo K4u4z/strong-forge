@@ -57,6 +57,9 @@ O projeto tem como objetivo auxiliar pessoas a alcançarem melhores resultados f
 
 ![Diagrama entidade relacionamento (1)](https://github.com/user-attachments/assets/a0f39a48-af74-436f-a144-dd9d89ba6dc5)
 
-
-# Prototipação
+# Prototipação das Telas
+<h2>Telas</h2>h2>
 - Link: https://www.figma.com/design/6fdgDwycb20QVUwaotTB6k/Untitled?node-id=0-1&t=XfcIMB5OSDPwX7Sx-1
+Tela de login
+![Cadastro](https://github.com/user-attachments/assets/3c369ade-98e7-48e8-b16c-15626c3653fe)
+
