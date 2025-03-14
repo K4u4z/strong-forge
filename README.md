@@ -57,6 +57,7 @@
 <ul>
 <li>Usuario, Personal, Lista de exercicio, Exercicio, Itens da lista pessoal e contrato_personal_usuario</li>
 </ul>
+
 ![Diagrama entidade relacionamento ](https://github.com/user-attachments/assets/12a7e5c7-0622-4799-a9b6-be171c00e1fe)
 
 <h2>Diagrama entidade relacionamento (MER)</h2>
