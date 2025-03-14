@@ -86,7 +86,8 @@ O projeto tem como objetivo auxiliar pessoas a alcançarem melhores resultados f
 
 <h2>Tela Cronograma de treinos</h2>
 
-![Criar lista](https://github.com/user-attachments/assets/2bc1316d-6c83-40af-9ad2-f84fda1cc799)
+![Cronograma Treino](https://github.com/user-attachments/assets/3dd2fd34-fc00-4d25-904b-8bfb5d9e47c5)
+
 
 <h2>Tela de Personais</h2>
 
