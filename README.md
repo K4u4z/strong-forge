@@ -51,11 +51,16 @@ O projeto tem como objetivo auxiliar pessoas a alcançarem melhores resultados f
 
 ![Diagrama (UML) (1)](https://github.com/user-attachments/assets/317b90b6-1d4c-4153-a28e-5460a6fcb43f)
 
-<h2>Diagrama entidade relacionamento</h2>
+<h2>Diagrama entidade relacionamento (DER)</h2>
 1. Entidades:
-- Usuario, Personal, Lista de exercicio, Exercicio, Itens da lista pessoal
+- Usuario, Personal, Lista de exercicio, Exercicio, Itens da lista pessoal e contrato_personal_usuario
 
 ![Diagrama entidade relacionamento ](https://github.com/user-attachments/assets/12a7e5c7-0622-4799-a9b6-be171c00e1fe)
+
+<h2>Diagrama entidade relacionamento (MER)</h2>
+1. Entidades:
+- Usuario, Personal, Lista de exercicio, Exercicio, Itens da exercicio e contrato_personal_usuario
+![modelo_PI3](https://github.com/user-attachments/assets/65f3233d-90a9-4853-ba82-c9428deaf129)
 
 # Prototipação das Telas
 
