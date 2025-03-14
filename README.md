@@ -1,44 +1,51 @@
 # Projeto Integrador3
 
-<h2>Lista de funcionalidades</h2>
+**<h2>Lista de funcionalidades</h2>**
 
-<p>Objetivo do Projeto</p>
+**<p>Objetivo do Projeto</p>**
 
 <p>O projeto tem como objetivo auxiliar pessoas a alcançarem melhores resultados físicos por meio das funcionalidades oferecidas pelo sistema. A plataforma permite o acompanhamento personalizado de treinos, facilita o acesso a profissionais qualificados e proporciona uma experiência interativa e intuitiva para os usuários que desejam melhorar sua condição física.</p>
 
-<h2>Funcionalidades do Sistema</h2>
+**<h2>Funcionalidades do Sistema</h2>**
 
-1. Cadastro de Usuário
+**<h3>1. Cadastro de Usuário</h3>**
 <ul>
   <li>O usuário pode realizar o cadastro de suas informações pessoais no sistema;</li>
 
   <li>Uma vez cadastrado, o usuário pode realizar login na plataforma para acessar suas funcionalidades personalizadas</li>
 </ul>
-2. Lista de Exercícios
+
+**<h3>2. Lista de Exercícios</h3>**
+
 <ul>
 <li>O sistema exibe uma lista de exercícios para cada grupo muscular;</li>
 
   <li>Cada exercício apresenta informações detalhadas, incluindo nome, grupo muscular ao qual pertence e instruções sobre como realizá-lo corretamente.</li>
 </ul>
-3. Criar Lista de Exercícios Pessoal
+
+**<h3>3. Criar Lista de Exercícios Pessoal</h3>**
 <ul>
 <li>O usuário pode criar uma lista personalizada de exercícios conforme sua preferência;</li>
  <li>A lista pode ser visualizada, alterada ou excluída conforme a necessidade do usuário, garantindo maior flexibilidade no planejamento do treino.</li>
 </ul>
 
-4. Grid de Personais
+**<h3>4. Grid de Personais</h3>**
 <ul>
 <li>A plataforma exibe uma lista de personais trainers disponíveis para contato;</li>
 
   <li>Ao clicar no perfil de um personal, o usuário pode visualizar informações detalhadas, como experiência, especializações e formas de contato;</li>
 </ul>
-4.1. Contratar Personal
+
+**<h3>4.1. Contratar Personal</h3>**
+
 <ul>
 <li>O usuário pode entrar em contato com o personal escolhido para obter acompanhamento profissional personalizado;</li>
 
   <li>A plataforma facilita a interação entre os usuários e os profissionais, promovendo um suporte adequado ao desenvolvimento físico;</li>
 </ul>
-5. Administração
+
+**<h3>5. Administração</h3>**
+
 <ul>
 <li>Usuários com permissão administrativa têm acesso a funcionalidades de controle do sistema, incluindo:</li>
 <li>Gerenciamento de usuários: possibilidade de alterar e excluir cadastros e informações;</li>
