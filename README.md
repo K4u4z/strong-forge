@@ -60,6 +60,7 @@ O projeto tem como objetivo auxiliar pessoas a alcançarem melhores resultados f
 <h2>Diagrama entidade relacionamento (MER)</h2>
 1. Entidades:
 - Usuario, Personal, Lista de exercicio, Exercicio, Itens da exercicio e contrato_personal_usuario
+
 ![modelo_PI3](https://github.com/user-attachments/assets/65f3233d-90a9-4853-ba82-c9428deaf129)
 
 # Prototipação das Telas
