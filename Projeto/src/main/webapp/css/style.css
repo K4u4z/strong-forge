@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+     font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f0f4f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 80%;
+    max-width: 900px;
+    padding: 40px;
+    background: #fff;
+   border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+#img-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#img_cad {
+    width: 100%;
+    max-width: 400px;
+     border-radius: 12px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#form-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Label_cad {
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    margin: 10px 0;
+}
+
+.Input_cad {
+    display: block;
+    background-color: #ffffff;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    outline: none;
+    border: 1px solid #ddd;
+}
+
+#Btn_cad {
+    background-color: #2CA96A;
+    color: #fff;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 50px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#Btn_log {
+    background-color: #ffffff;
+    color: #000;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 50px;
+    border: 2px solid #000;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.Input_cad:hover, .Input_cad:focus {
+    border-color: #2CA96A;
+    box-shadow: 0px 4px 8px rgba(44, 169, 106, 0.3);
+}
+
+#Btn_cad:hover {
+    transform: scale(1.05);
+}
+
+#Btn_log:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+a{
+text-decoration: none; color: #000;
+}
