@@ -1,0 +1,508 @@
+:root {
+    --dark-gray: #333333;
+    --medium-gray: #333333;
+    --light-gray: #ecf0f1;
+    --accent-green: #27ae60;
+    --hover-green: #2ecc71;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--light-gray);
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+nav {
+    width: 250px;
+    background-color: var(--dark-gray);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+.logo {
+    text-align: center;
+    padding: 0 20px 20px;
+    border-bottom: 1px solid var(--accent-green);
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 210px;
+    height: auto;
+}
+
+.logo h1 {
+    color: var(--accent-green);
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.logo p {
+    color: var(--light-gray);
+    font-size: 0.9rem;
+}
+
+.nav-links {
+    flex-grow: 1;
+}
+
+.nav-links a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.nav-links a:hover {
+    background-color: var(--medium-gray);
+    border-left: 4px solid var(--accent-green);
+    color: var(--hover-green);
+}
+
+.nav-links a.active {
+    background-color: var(--medium-gray);
+    border-left: 4px solid var(--accent-green);
+    color: var(--accent-green);
+}
+
+main {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: var(--light-gray);
+}
+
+.welcome-section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.welcome-section h2 {
+    color: var(--dark-gray);
+    margin-bottom: 20px;
+    font-size: 2rem;
+    border-bottom: 2px solid var(--accent-green);
+    padding-bottom: 10px;
+}
+
+.welcome-section p {
+    color: var(--medium-gray);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.mission-section {
+    background-color: var(--medium-gray);
+    color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mission-section h3 {
+    color: var(--accent-green);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.mission-section blockquote {
+    font-style: italic;
+    margin: 15px 0;
+    padding-left: 20px;
+    border-left: 3px solid var(--accent-green);
+}
+
+/* Estilo do footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+    background-color: var(--dark-gray);
+    color: white;
+}
+
+footer .footer-content {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+footer .footer-section {
+    flex: 1 1 200px;
+}
+
+footer .footer-section h4 {
+    color: var(--accent-green);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+footer .footer-section p,
+footer .footer-section a {
+    font-size: 0.9rem;
+    color: var(--light-gray);
+    text-decoration: none;
+    line-height: 1.6;
+}
+
+footer .footer-section a:hover {
+    color: var(--hover-green);
+}
+
+footer .footer-bottom {
+    margin-top: 30px;
+    font-size: 0.8rem;
+    color: var(--light-gray);
+}
+
+/* Estilos para a seção de personais */
+.personais-section {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.personais-section h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+    text-align: center;
+}
+
+.personal-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.personal-card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.personal-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.personal-photo {
+    height: 220px;
+    overflow: hidden;
+}
+
+.personal-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.personal-card:hover .personal-photo img {
+    transform: scale(1.05);
+}
+
+.personal-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.personal-card h3 {
+    margin: 0 0 10px 0;
+    color: #222;
+    font-size: 22px;
+}
+
+.personal-card .location {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.personal-card .location i {
+    margin-right: 8px;
+    color: #ff6b6b;
+}
+
+.personal-card .stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.personal-card .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.personal-card .stat-item span:first-child {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.personal-card .stat-item span:last-child {
+    font-size: 14px;
+    color: #666;
+}
+
+.personal-card .stats .rating {
+    color: #ff9800;
+}
+
+.personal-card .stats .alunos {
+    color: #2196f3;
+}
+
+.personal-card .stats .avaliacoes {
+    color: #4caf50;
+}
+
+/* Estilos para o main */
+main {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: var(--light-gray);
+}
+
+.featured-trainers, .how-it-works {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.featured-trainers h2, .how-it-works h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: var(--dark-gray);
+    border-bottom: 2px solid var(--accent-green);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.trainer-card {
+    display: flex;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin-bottom: 3rem;
+    border: 1px solid #eee;
+}
+
+.trainer-photo {
+    flex: 0 0 300px;
+    background-color: #f5f5f5;
+}
+
+.trainer-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.trainer-info {
+    flex: 1;
+    padding: 2rem;
+}
+
+.trainer-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-gray);
+}
+
+.age-location, .education {
+    color: var(--medium-gray);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.specialties, .services {
+    margin-bottom: 1.5rem;
+}
+
+.specialties h4, .services h4 {
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+}
+
+.specialties ul {
+    list-style-position: inside;
+    color: var(--medium-gray);
+    line-height: 1.6;
+}
+
+.specialties li {
+    margin-bottom: 0.5rem;
+}
+
+.philosophy {
+    font-style: italic;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background-color: #f8f8f8;
+    border-left: 4px solid var(--accent-green);
+    color: var(--medium-gray);
+    line-height: 1.6;
+}
+
+.trainer-contacts {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.instagram, .linkedin {
+    color: var(--accent-green);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.instagram:hover, .linkedin:hover {
+    color: var(--hover-green);
+}
+
+.contact-btn {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--accent-green);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: auto;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.contact-btn:hover {
+    background-color: var(--hover-green);
+}
+
+.how-it-works .steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.step {
+    flex: 1;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+    transition: transform 0.3s;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+}
+
+.step span {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: var(--accent-green);
+    color: white;
+    border-radius: 50%;
+    line-height: 50px;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.step h3 {
+    color: var(--dark-gray);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.step p {
+    color: var(--medium-gray);
+    line-height: 1.6;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .trainer-card {
+        flex-direction: column;
+    }
+    
+    .trainer-photo {
+        flex: 0 0 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .search-section h1, 
+    .featured-trainers h2, 
+    .how-it-works h2 {
+        font-size: 1.8rem;
+    }
+    
+    .how-it-works .steps {
+        flex-direction: column;
+    }
+    
+    .trainer-info {
+        padding: 1.5rem;
+    }
+    
+    .trainer-contacts {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .contact-btn {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 20px 15px;
+    }
+}
