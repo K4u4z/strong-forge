@@ -126,7 +126,7 @@ public class UsuarioDao {
         }
     }
 
-    public boolean VerifyCredentials(Usuario usuario) {
+    public boolean verifyCredentials(Usuario usuario) {
         String SQL = "SELECT * FROM USUARIO WHERE EMAIL = ?";
 
         try {
