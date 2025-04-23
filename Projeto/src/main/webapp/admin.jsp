@@ -7,7 +7,12 @@
 </head>
 <body>
   <div>
-    <h1>Cars</h1>
+  <c:if test="${sessionScope.loggedUsuario != null}">
+          <span>${sessionScope.loggedUser}</span>
+          <a href="/logout">Logout</a>
+      </c:if>
+
+    <h1>Usuarios</h1>
     <table>
         <tr>
             <th>ID</th>
@@ -20,12 +25,14 @@
                    <td>${Usuario.email}</td>
                                 <td>${Usuario.senha}</td>
                                  <td>
+                                        <c:if test="${sessionScope.loggedUsuario != null}">
                                                 <form action="/delete-usuario" method="post">
                                                     <input type="hidden" id="id" name="id" value="${Usuario.id}">
                                                     <button type="submit">Delete</button>
                                                     <span> | </span>
                                                     <a href="index.jsp?id=${Usuario.id}&nome=${Usuario.nome}">Update</a>
                                                 </form>
+                                                                    </c:if>
                                             </td>
             </tr>
         </c:forEach>

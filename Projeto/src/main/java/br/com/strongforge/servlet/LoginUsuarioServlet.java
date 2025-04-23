@@ -1,5 +1,6 @@
 package br.com.strongforge.servlet;
 
+import br.com.strongforge.dao.UsuarioDao;
 import br.com.strongforge.model.Usuario;
 
 import javax.servlet.ServletException;
@@ -22,6 +23,20 @@ public class LoginUsuarioServlet extends HttpServlet {
         String email = req.getParameter("user-email");
         String senha = req.getParameter("user-senha");
 
+        Usuario usuario = new Usuario(email,senha);
+
+        boolean isValidUsuario = new UsuarioDao().verifyCredentials(usuario);
+
+        if(isValidUsuario){
+
+            req.getSession().setAttribute("loggedUsuario", email);
+
+            resp.sendRedirect("index.jsp");
+        }else{
+            req.setAttribute("message", "credenciais invalidas");
+
+            req.getRequestDispatcher("login.jsp").forward(req, resp);
+        }
 
     }
 }

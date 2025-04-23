@@ -41,7 +41,7 @@ public class CreateUsuarioServlet  extends HttpServlet{
         }
 
 
-        resp.sendRedirect("login.html");
+        resp.sendRedirect("login.jsp");
 
 
     }

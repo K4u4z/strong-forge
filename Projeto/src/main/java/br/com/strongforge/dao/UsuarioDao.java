@@ -126,7 +126,7 @@ public class UsuarioDao {
         }
     }
 
-    public boolean VerifyCredentials(Usuario usuario) {
+    public boolean verifyCredentials(Usuario usuario) {
         String SQL = "SELECT * FROM USUARIO WHERE EMAIL = ?";
 
         try {
@@ -141,7 +141,7 @@ public class UsuarioDao {
 
             while (resultSet.next()) {
 
-                String senha = resultSet.getString("user-senha");
+                String senha = resultSet.getString("senha");
 
                 if (senha.equals(usuario.getSenha())) {
 
