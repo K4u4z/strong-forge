@@ -141,7 +141,7 @@ public class UsuarioDao {
 
             while (resultSet.next()) {
 
-                String senha = resultSet.getString("user-senha");
+                String senha = resultSet.getString("senha");
 
                 if (senha.equals(usuario.getSenha())) {
 
