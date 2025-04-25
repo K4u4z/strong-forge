@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
+    <link href="css/style2.css" rel="stylesheet">
 </head>
 <body>
   <div>
@@ -25,14 +26,14 @@
                    <td>${Usuario.email}</td>
                                 <td>${Usuario.senha}</td>
                                  <td>
-                                        <c:if test="${sessionScope.loggedUsuario != null}">
+
                                                 <form action="/delete-usuario" method="post">
                                                     <input type="hidden" id="id" name="id" value="${Usuario.id}">
                                                     <button type="submit">Delete</button>
                                                     <span> | </span>
                                                     <a href="index.jsp?id=${Usuario.id}&nome=${Usuario.nome}">Update</a>
                                                 </form>
-                                                                    </c:if>
+
                                             </td>
             </tr>
         </c:forEach>
