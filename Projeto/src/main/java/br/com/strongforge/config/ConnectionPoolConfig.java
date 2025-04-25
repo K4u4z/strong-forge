@@ -29,8 +29,8 @@ public class ConnectionPoolConfig {
         return dataSource;
     }
 
-        public static Connection getConnection() throws SQLException {
+    public static Connection getConnection() throws SQLException {
         return getDataSource().getConnection();
-        }
+    }
 
 }

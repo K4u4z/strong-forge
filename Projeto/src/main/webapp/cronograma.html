@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strong Forge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <img src="logo2.png" alt="Logo">
+                <p>"Transforme seu corpo, fortaleça sua mente."</p>
+            </div>
+            <div class="nav-links">
+                <a href="home.jsp">Home</a>
+                <a href="personais.html">Personais</a>
+                <a href="cronograma.html">Cronograma</a>
+                <a href="exercicios.html">Exercícios</a>
+            </div>
+        </nav>
+
+        <main>
+            <div class="training-schedule">
+                <h1>Meu Cronograma de Treinos</h1>
+
+                <div class="day-selector">
+                    <h2>Selecione um dia e atribua um treino:</h2>
+                    <div class="days">
+                        <button class="day-btn" data-day="segunda">Segunda</button>
+                        <button class="day-btn" data-day="terca">Terça</button>
+                        <button class="day-btn" data-day="quarta">Quarta</button>
+                        <button class="day-btn" data-day="quinta">Quinta</button>
+                        <button class="day-btn" data-day="sexta">Sexta</button>
+                        <button class="day-btn" data-day="sabado">Sábado</button>
+                        <button class="day-btn" data-day="domingo">Domingo</button>
+                    </div>
+                </div>
+
+                <div class="workout-assignment">
+                    <h2>Atribuir treino:</h2>
+                    <div class="workout-options">
+                        <select class="workout-select">
+                            <option value="">Selecione um treino</option>
+                            <option value="perna">Treino Perna</option>
+                            <option value="costas">Treino Costas</option>
+                            <option value="abdomen">Treino Abdômen</option>
+                            <option value="gluteos">Treino Glúteos</option>
+                            <option value="peito">Treino Peito</option>
+                            <option value="braco">Treino Braço</option>
+                            <option value="cardio">Cardio</option>
+                        </select>
+                        <button class="assign-btn">Atribuir</button>
+                    </div>
+                </div>
+
+                <div class="schedule-view">
+                    <h2>Seu Cronograma:</h2>
+                    <div class="schedule-grid">
+                        <div class="day-card" data-day="segunda">
+                            <h3>Segunda-feira</h3>
+                            <div class="workout">-</div>
+                        </div>
+                        <div class="day-card" data-day="terca">
+                            <h3>Terça-feira</h3>
+                            <div class="workout">-</div>
+                        </div>
+                        <div class="day-card" data-day="quarta">
+                            <h3>Quarta-feira</h3>
+                            <div class="workout">-</div>
+                        </div>
+                        <div class="day-card" data-day="quinta">
+                            <h3>Quinta-feira</h3>
+                            <div class="workout">-</div>
+                        </div>
+                        <div class="day-card" data-day="sexta">
+                            <h3>Sexta-feira</h3>
+                            <div class="workout">-</div>
+                        </div>
+                        <div class="day-card" data-day="sabado">
+                            <h3>Sábado</h3>
+                            <div class="workout">-</div>
+                        </div>
+                        <div class="day-card" data-day="domingo">
+                            <h3>Domingo</h3>
+                            <div class="workout">-</div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="save-btn">Salvar Cronograma</button>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sobre Nós</h4>
+                <p>Strong Gym é dedicada a fornecer informações de qualidade sobre exercícios e treinamento físico. Nosso objetivo é ajudar você a alcançar seus objetivos de forma segura e eficiente.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contato</h4>
+                <p>Email: contato@stronggym.com</p>
+                <p>Telefone: (11) 98765-4321</p>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">YouTube</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2023 Strong Gym. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script>
+        // Variáveis globais
+        let selectedDay = null;
+        const workoutSelect = document.querySelector('.workout-select');
+        const assignBtn = document.querySelector('.assign-btn');
+        const saveBtn = document.querySelector('.save-btn');
+        const dayButtons = document.querySelectorAll('.day-btn');
+        const dayCards = document.querySelectorAll('.day-card');
+    
+        // Função para formatar o nome do treino para exibição
+        function formatarNomeTreino(treino) {
+            const nomes = {
+                'perna': 'Treino de Perna',
+                'costas': 'Treino de Costas',
+                'abdomen': 'Treino de Abdômen',
+                'gluteos': 'Treino de Glúteos',
+                'peito': 'Treino de Peito',
+                'braco': 'Treino de Braço',
+                'cardio': 'Cardio'
+            };
+            return nomes[treino] || treino;
+        }
+    
+        // Selecionar um dia
+        dayButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove a seleção de todos os botões
+                dayButtons.forEach(btn => btn.classList.remove('selected'));
+                // Adiciona a seleção ao botão clicado
+                button.classList.add('selected');
+                // Define o dia selecionado
+                selectedDay = button.getAttribute('data-day');
+                
+                // Feedback visual
+                showFeedback(`Dia selecionado: ${button.textContent}`, 'info');
+            });
+        });
+    
+        // Atribuir treino ao dia selecionado
+        assignBtn.addEventListener('click', () => {
+            if (!selectedDay) {
+                showFeedback('Por favor, selecione um dia primeiro!', 'warning');
+                return;
+            }
+    
+            const selectedWorkout = workoutSelect.value;
+            if (!selectedWorkout) {
+                showFeedback('Por favor, selecione um treino!', 'warning');
+                return;
+            }
+    
+            // Atualiza o card do dia correspondente
+            const dayCard = document.querySelector(`.day-card[data-day="${selectedDay}"] .workout`);
+            dayCard.textContent = formatarNomeTreino(selectedWorkout);
+            
+            // Feedback visual
+            showFeedback(`Treino atribuído com sucesso para ${selectedDay}!`, 'success');
+        });
+    
+        // Salvar cronograma no localStorage
+        saveBtn.addEventListener('click', () => {
+            const schedule = {};
+            
+            // Coleta todos os treinos atribuídos
+            dayCards.forEach(card => {
+                const day = card.getAttribute('data-day');
+                const workout = card.querySelector('.workout').textContent;
+                
+                // Se não for o placeholder padrão "-", salva o treino
+                if (workout !== '-') {
+                    // Converte o nome formatado de volta para o valor original
+                    const workoutValue = Object.entries({
+                        'perna': 'Treino de Perna',
+                        'costas': 'Treino de Costas',
+                        'abdomen': 'Treino de Abdômen',
+                        'gluteos': 'Treino de Glúteos',
+                        'peito': 'Treino de Peito',
+                        'braco': 'Treino de Braço',
+                        'cardio': 'Cardio'
+                    }).find(([key, val]) => val === workout)?.[0] || workout;
+                    
+                    schedule[day] = workoutValue;
+                }
+            });
+    
+            // Salva no localStorage
+            localStorage.setItem('treinoSchedule', JSON.stringify(schedule));
+            
+            // Mostra o cronograma salvo
+            showSavedSchedule();
+            showFeedback('Cronograma salvo com sucesso!', 'success');
+        });
+    
+        // Função para mostrar o cronograma salvo
+        function showSavedSchedule() {
+            const savedSchedule = JSON.parse(localStorage.getItem('treinoSchedule')) || {};
+    
+            // Remove o cronograma existente se houver
+            const existing = document.querySelector('.saved-schedule');
+            if (existing) existing.remove();
+    
+            // Cria o elemento do cronograma salvo
+            const scheduleDisplay = document.createElement('div');
+            scheduleDisplay.classList.add('saved-schedule');
+            scheduleDisplay.innerHTML = '<h2>📅 Cronograma Salvo</h2>';
+    
+            const list = document.createElement('ul');
+            list.classList.add('schedule-list');
+    
+            const diasSemana = {
+                segunda: 'Segunda-feira',
+                terca: 'Terça-feira',
+                quarta: 'Quarta-feira',
+                quinta: 'Quinta-feira',
+                sexta: 'Sexta-feira',
+                sabado: 'Sábado',
+                domingo: 'Domingo'
+            };
+    
+            // Ordena os dias da semana corretamente
+            const diasOrdenados = ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado', 'domingo'];
+    
+            diasOrdenados.forEach(day => {
+                if (savedSchedule[day]) {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `
+                        <strong>${diasSemana[day]}:</strong> 
+                        <span>${formatarNomeTreino(savedSchedule[day])}</span>
+                    `;
+                    list.appendChild(listItem);
+                }
+            });
+    
+            scheduleDisplay.appendChild(list);
+            document.querySelector('.training-schedule').appendChild(scheduleDisplay);
+    
+            // Animação
+            scheduleDisplay.style.opacity = '0';
+            scheduleDisplay.style.transform = 'translateY(20px)';
+            scheduleDisplay.style.transition = 'all 0.3s ease';
+    
+            setTimeout(() => {
+                scheduleDisplay.style.opacity = '1';
+                scheduleDisplay.style.transform = 'translateY(0)';
+            }, 100);
+        }
+    
+        // Função para mostrar feedback visual
+        function showFeedback(message, type) {
+            const feedback = document.createElement('div');
+            feedback.className = `feedback ${type}`;
+            feedback.textContent = message;
+    
+            document.body.appendChild(feedback);
+    
+            setTimeout(() => {
+                feedback.style.opacity = '1';
+            }, 10);
+    
+            setTimeout(() => {
+                feedback.style.opacity = '0';
+                setTimeout(() => {
+                    feedback.remove();
+                }, 300);
+            }, 3000);
+        }
+    
+        // Carrega o cronograma salvo ao iniciar a página
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedSchedule = JSON.parse(localStorage.getItem('treinoSchedule')) || {};
+            
+            // Preenche os cards com os treinos salvos
+            dayCards.forEach(card => {
+                const day = card.getAttribute('data-day');
+                if (savedSchedule[day]) {
+                    card.querySelector('.workout').textContent = formatarNomeTreino(savedSchedule[day]);
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

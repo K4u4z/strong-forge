@@ -31,7 +31,7 @@ public class LoginUsuarioServlet extends HttpServlet {
 
             req.getSession().setAttribute("loggedUsuario", email);
 
-            resp.sendRedirect("index.jsp");
+            resp.sendRedirect("home.jsp");
         }else{
             req.setAttribute("message", "credenciais invalidas");
 
