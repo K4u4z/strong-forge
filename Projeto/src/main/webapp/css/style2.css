@@ -17,7 +17,7 @@ body {
     background-color: var(--light-gray);
     display: flex;
     flex-direction: column;
-    min-height: 100vh; 
+    min-height: 100vh;
 }
 
 .container {
@@ -1011,20 +1011,141 @@ main {
         padding: 20px 15px;
     }
 }
-.btn-login, .btn-cadastro {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    background-color: var(--accent-green);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
+
+/* Bloco de conteúdo */
+.content-block {
+    background-color: var(--dark-gray);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    margin: 30px auto; /* Margem automática nas laterais para centralizar */
+    border: 1px solid var(--medium-gray);
+    width: 90%; /* Largura relativa para responsividade */
+    max-width: 900px; /* Largura máxima */
+    display: block; /* Garante que será um bloco */
 }
 
-.btn-login:hover, .btn-cadastro:hover {
-    background-color: var(--hover-green);
+/* Restante do seu CSS permanece igual */
+.user-info {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(0, 255, 153, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-left: 4px solid var(--accent-green);
+    z-index: 10;
 }
+
+.user-info span {
+    font-size: 1.1rem;
+}
+
+.user-info strong {
+    color: var(--accent-green);
+}
+
+.logout-btn {
+    background-color: var(--accent-green);
+    color: var(--dark-gray);
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: var(--hover-green);
+    transform: translateY(-2px);
+}
+
+/* Título da página */
+.content-block h1 {
+    color: var(--accent-green);
+    font-size: 2rem;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent-green);
+    display: inline-block;
+}
+
+/* Tabela de usuários */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: var(--medium-gray);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+th {
+    background-color: var(--accent-green);
+    color: var(--dark-gray);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(0, 255, 153, 0.05);
+}
+
+tr:hover {
+    background-color: rgba(0, 255, 153, 0.1);
+}
+
+/* Botões de ação */
+.action-btn {
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+.update-btn {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.update-btn:hover {
+    background-color: #138496;
+    transform: translateY(-2px);
+}
+
+.divider {
+    color: var(--medium-gray);
+    margin: 0 10px;
+}
+
+/* Formulários */
+form {
+    display: inline;
+}
+
+input[type="hidden"] {
+    display: none;
+}
+
