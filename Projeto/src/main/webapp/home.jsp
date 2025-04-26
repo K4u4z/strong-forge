@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +14,7 @@
         <nav>
             <div class="logo">
                 <img src="img/logo2.png" alt="Logo">
-                <p>"Transforme seu corpo, e sua mente."</p>
+                <p>"Transforme seu corpo, fortaleça sua mente."</p>
             </div>
             <div class="nav-links">
                 <div class="auth-buttons">
@@ -26,8 +29,9 @@
                 <a href="exercicios.html">Exercícios</a>
 
                 <c:if test="${sessionScope.loggedUsuario != null}">
-                <a href="admin.jsp">Admin</a>
+                <a href="/findAllUsuario">Admin</a>
                  </c:if>
+
             </div>
         </nav>
 
@@ -35,7 +39,7 @@
             <section class="welcome-section">
                 <h2>Bem-vindo à Strong Forge!</h2>
                 <p class="welcome-message">
-                    <strong>Transforme seu corpo e mente</strong> na academia onde limites são desafiados e metas se tornam realidade. 
+                    <strong>Transforme seu corpo, fortaleça sua mente.</strong> na academia onde limites são desafiados e metas se tornam realidade.
                     Na Strong Forge, não moldamos apenas músculos - forjamos <strong>determinação, disciplina</strong> e 
                     <strong>resultados que permanecem</strong>.
                 </p>

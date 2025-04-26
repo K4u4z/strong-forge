@@ -1,43 +1,66 @@
 <!DOCTYPE html>
 <html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
     <link href="css/style2.css" rel="stylesheet">
 </head>
 <body>
+<div class="container">
+        <nav>
+            <div class="logo">
+                <img src="img/logo2.png" alt="Logo">
+                <p>"Transforme seu corpo, fortaleça sua mente."</p>
+            </div>
+            <div class="nav-links">
+                <a href="home.jsp">Home</a>
+                <a href="personais.html">Personais</a>
+                <a href="cronograma.html">Cronograma</a>
+                <a href="exercicios.html">Exercícios</a>
+            </div>
+        </nav>
   <div>
   <c:if test="${sessionScope.loggedUsuario != null}">
-          <span>${sessionScope.loggedUser}</span>
-          <a href="/logout">Logout</a>
-      </c:if>
+              <div class="user-info">
+                  <span>Bem-vindo, <strong>${sessionScope.loggedUser}</strong></span>
+                  <a href="/logout" class="logout-btn">Logout</a>
+              </div>
+          </c:if>
+<div class="content-block">
+        <h1 style="color: #343a40; border-bottom: 2px solid #28a745; padding-bottom: 10px;">Gerenciamento de Usuários</h1>
 
-    <h1>Usuarios</h1>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-        </tr>
-        <c:forEach var="Usuario" items="${usuarios}">
-            <tr>
-                <td>${Usuario.id}</td>
-             <td>${Usuario.nome}</td>
-                   <td>${Usuario.email}</td>
-                                <td>${Usuario.senha}</td>
-                                 <td>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <c:forEach var="Usuario" items="${usuarios}">
+                    <tr>
+                        <td>${Usuario.id}</td>
+                        <td>${Usuario.nome}</td>
+                        <td>${Usuario.email}</td>
+                        <td>
+                        <span class="divider">|</span>
+                        <a href="cadastro.jsp?id=${Usuario.id}&nome=${Usuario.nome}" class="action-btn update-btn">Editar</a>
+                        <br>
+                        <br>
+                            <form action="/delete-usuario" method="post" style="display: inline;">
+                                <input type="hidden" id="id" name="id" value="${Usuario.id}">
+                                <button type="submit" class="action-btn delete-btn">Excluir</button>
+                            </form>
 
-                                                <form action="/delete-usuario" method="post">
-                                                    <input type="hidden" id="id" name="id" value="${Usuario.id}">
-                                                    <button type="submit">Delete</button>
-                                                    <span> | </span>
-                                                    <a href="index.jsp?id=${Usuario.id}&nome=${Usuario.nome}">Update</a>
-                                                </form>
-
-                                            </td>
-            </tr>
-        </c:forEach>
-    </table>
-  </div>
+                        </td>
+                    </tr>
+                </c:forEach>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
