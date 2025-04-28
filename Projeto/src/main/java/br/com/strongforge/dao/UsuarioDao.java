@@ -115,7 +115,7 @@ public class UsuarioDao {
             preparedStatement.setString(1, userId);
             preparedStatement.execute();
 
-            System.out.println("success ao deletar o carro pelo ID " + userId);
+            System.out.println("success ao deletar o usuario pelo ID " + userId);
 
             connection.close();
 
