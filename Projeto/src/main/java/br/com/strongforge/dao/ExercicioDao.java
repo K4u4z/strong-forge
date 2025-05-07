@@ -134,4 +134,38 @@ public class ExercicioDao {
 
         }
     }
+    public Exercicio detalhesExercicioById(String exercicioId) {
+        String SQL = "SELECT * FROM EXERCICIO WHERE ID = ?";
+
+        try {
+            Connection connection = ConnectionPoolConfig.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            preparedStatement.setString(1, exercicioId);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                String id = resultSet.getString("id");
+                String nome = resultSet.getString("nome");
+                String agrupamento = resultSet.getString("agrupamento");
+                String nivel = resultSet.getString("nivel");
+                String descricao = resultSet.getString("descricao");
+                String image = resultSet.getString("image");
+                String video = resultSet.getString("video");
+
+                Exercicio exercicio = new Exercicio(id, nome, agrupamento, nivel,
+                        descricao, image, video);
+
+                connection.close();
+            } else {
+                connection.close();
+            }
+
+        } catch(Exception e) {
+            System.out.println("Falha ao se conectar com o banco");
+            System.out.println("Erro: " + e.getMessage());
+        }
+        return null;
+    }
+
 }

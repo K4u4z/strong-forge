@@ -26,7 +26,7 @@
                 <a href="home.jsp">Home</a>
                 <a href="personais.html">Personais</a>
                 <a href="cronograma.html">Cronograma</a>
-                <a href="exercicios.html">Exercícios</a>
+                <a href="/findAllExercicio">Exercícios</a>
 
                 <c:if test="${sessionScope.loggedUsuario != null}">
                 <a href="/findAllUsuario">Admin</a>
