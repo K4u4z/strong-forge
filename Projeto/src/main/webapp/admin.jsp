@@ -5,13 +5,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style2.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
         <nav>
             <div class="logo">
-                <img src="img/logo01.png" alt="Logo">
+                <img src="img/logo2.png" alt="Logo">
                 <p>"Transforme seu corpo, fortaleça sua mente."</p>
             </div>
             <div class="nav-links">

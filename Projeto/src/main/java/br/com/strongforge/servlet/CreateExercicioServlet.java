@@ -24,9 +24,9 @@ import static org.apache.commons.fileupload.servlet.ServletFileUpload.isMultipar
 public class CreateExercicioServlet extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-        req.setCharacterEncoding("UTF-8");
 
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
 
         Map<String, String> parameters = uploadImage(req);
 
@@ -35,62 +35,66 @@ public class CreateExercicioServlet extends HttpServlet {
         String exercicioAgrup = parameters.get("exercicio-agrupamento");
         String exercicioNivel = parameters.get("exercicio-nivel");
         String exercicioDesc = parameters.get("exercicio-descricao");
-        String exercicioImage = parameters.get("exercicio-image");
+        String exercicioImage = parameters.get("image");
         String exercicioVideo = parameters.get("exercicio-video");
 
-        ExercicioDao exercicioDao = new ExercicioDao();
 
-        Exercicio exercicio = new Exercicio(exercicioId,exercicioName,exercicioAgrup,exercicioNivel,exercicioDesc,exercicioImage,exercicioVideo);
+        Exercicio exercicio = new Exercicio("0", exercicioName, exercicioAgrup, exercicioNivel, exercicioDesc, exercicioImage, exercicioVideo);
 
-
-
+        new ExercicioDao().createExercicio(exercicio);
 
 
-        if (exercicioId == null || exercicioId.isBlank()) {
 
-            exercicioDao.createExercicio(exercicio);
+        resp.sendRedirect("/findAllExercicio");
+    }
+
+
+
+    private Map<String, String> uploadImage(HttpServletRequest httpServletRequest) {
+
+        Map<String, String> requestParameters = new HashMap<>();
+
+        if (isMultipartContent(httpServletRequest)) {
+
+            try {
+
+                DiskFileItemFactory diskFileItemFactory = new DiskFileItemFactory();
+
+                List<FileItem> fileItems = new ServletFileUpload(diskFileItemFactory).parseRequest(httpServletRequest);
+
+                for (FileItem fileItem : fileItems) {
+
+                    checkFieldType(fileItem, requestParameters);
+
+                }
+
+            } catch (Exception ex) {
+
+                requestParameters.put("img", "img/default-car.jpg");
+
+            }
+
+        }
+
+        return requestParameters;
+
+    }
+
+    private void checkFieldType(FileItem item, Map requestParameters) throws Exception {
+
+        if (item.isFormField()) {
+
+            requestParameters.put(item.getFieldName(), item.getString());
 
         } else {
 
-            exercicioDao.updateExercicio(exercicio);
+            String fileName = processUploadedFile(item);
+            requestParameters.put("image", "img/".concat(fileName));
+
         }
-
-
-        resp.sendRedirect("admin.jsp");
-
 
     }
 
-    private Map<String, String> uploadImage(HttpServletRequest httpServletRequest){
-        HashMap<String, String> parameters = new HashMap<>();
-
-        if(isMultipartContent(httpServletRequest)){
-            try{
-                DiskFileItemFactory diskFileItemFactory = new DiskFileItemFactory();
-                List<FileItem> fileItems = new ServletFileUpload(diskFileItemFactory).parseRequest(httpServletRequest);
-
-                for(FileItem item:fileItems){
-                    checkFieldtype(item, parameters);
-                }
-            }catch( Exception e){
-                parameters.put("image", "img/default-exercicio.jpg");
-            }
-            return parameters;
-
-        }
-        return parameters;
-    }
-
-    private void checkFieldtype(FileItem fileItem, Map requestParameters ) throws Exception{
-        if(fileItem.isFormField()){
-
-            requestParameters.put(fileItem.getFieldName(), fileItem.getString());
-
-        }else{
-            String fileName = processUploadedFile(fileItem);
-            requestParameters.put("image", fileName);
-        }
-    }
     private String processUploadedFile(FileItem fileItem) throws Exception {
         Long currentTime = new Date().getTime();
         String fileName = currentTime.toString().concat("-").concat(fileItem.getName().replace(" ", ""));
@@ -98,5 +102,5 @@ public class CreateExercicioServlet extends HttpServlet {
         fileItem.write(new File(filePath));
         return fileName;
     }
-    }
+}
 
