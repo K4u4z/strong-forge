@@ -36,20 +36,11 @@
         </nav>
 
        <div class="exercicio-detalhes">
-           <h1>${exercicio.nome}</h1>
-           <p><strong>Nível:</strong> ${exercicio.nivel}</p>
-           <p><strong>Agrupamento:</strong> ${exercicio.agrupamento}</p>
-           <p><strong>Descrição:</strong> ${exercicio.descricao}</p>
 
-           <c:if test="${not empty exercicio.image}">
-               <img src="${exercicio.image}" alt="Demonstração do exercício">
-           </c:if>
-
-           <c:if test="${not empty exercicio.video}">
-               <video controls>
-                   <source src="${exercicio.video}" type="video/mp4">
-               </video>
-           </c:if>
+                                            <div class="exercise-card" data-category="${exercicio.agrupamento.toLowerCase()}">
+                                                <img src="${exercicio.image}" alt="exercicio_imagem">
+                                                <h3>${exercicio.nome}</h3>
+                                                <p>${exercicio.descricao}</p>
        </div>
     <footer>
         <div class="footer-content">

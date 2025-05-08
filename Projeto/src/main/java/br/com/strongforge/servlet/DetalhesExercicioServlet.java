@@ -14,25 +14,16 @@ import java.io.IOException;
 public class DetalhesExercicioServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        try {
-            String exercId = req.getParameter("id");
-            Exercicio exercicio = new ExercicioDao().detalhesExercicioById(exercId);
 
-            if (exercicio != null) {
-                req.setAttribute("exercicio", exercicio);
-                req.getRequestDispatcher("detalhesExercicios.jsp").forward(req, resp);
-            } else {
-                // Exercício não encontrado
-                resp.sendError(HttpServletResponse.SC_NOT_FOUND, "Exercício não encontrado");
-            }
-        } catch (NumberFormatException e) {
-            // ID inválido
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "ID de exercício inválido");
-        }
-    }
+        String exercId = req.getParameter("id");
+        Exercicio exercicio = new ExercicioDao().detalhesExercicioById(exercId);
+
+
+        req.setAttribute("exercicio", exercicio);
+        req.getRequestDispatcher("detalhesExercicios.jsp").forward(req, resp);
 
 
     }
-
+}
 
 

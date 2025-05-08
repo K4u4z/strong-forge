@@ -157,15 +157,17 @@ public class ExercicioDao {
                         descricao, image, video);
 
                 connection.close();
+                return exercicio; // Retorna o exercício encontrado
             } else {
                 connection.close();
+                return null; // Retorna null explicitamente se não encontrar
             }
 
         } catch(Exception e) {
             System.out.println("Falha ao se conectar com o banco");
             System.out.println("Erro: " + e.getMessage());
+            return null; // Retorna null em caso de exceção
         }
-        return null;
     }
 
 }

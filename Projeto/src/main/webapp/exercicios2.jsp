@@ -51,10 +51,11 @@
                                       <img src="${exercicio.image}" alt="exercicio_imagem">
                                       <h3>${exercicio.nome}</h3>
                                       <p>${exercicio.descricao}</p>
-                                       <form action="/detalhesExercicioById" method="GET" style="display: inline;">
-                                           <input type="hidden" id="id" name="id" value="${exercicio.id}">
-                                           <button type="submit" class="action-btn delete-btn">Ver detalhes</button>
-                                       </form>
+
+                                      <form action="detalhesExercicioById" method="GET">
+                                          <input type="hidden" name="id" value="${exercicio.id}">
+                                          <button type="submit" class="action-btn delete-btn">Ver detalhes</button>
+                                      </form>
                                   </div>
                               </c:forEach>
                           </section>
