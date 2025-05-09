@@ -22,6 +22,6 @@ public class ListExercicioServlet extends HttpServlet {
 
         req.setAttribute("exercicios", exercicios);
 
-        req.getRequestDispatcher("exercicios2.jsp").forward(req,resp);
+        req.getRequestDispatcher("exercicios.jsp").forward(req,resp);
     }
 }
