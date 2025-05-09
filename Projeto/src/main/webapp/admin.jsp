@@ -18,7 +18,7 @@
                 <a href="home.jsp">Home</a>
                 <a href="personais.html">Personais</a>
                 <a href="cronograma.html">Cronograma</a>
-                <a href="exercicios.html">Exercícios</a>
+                <a href="/findAllExercicio">Exercícios</a>
             </div>
         </nav>
   <div>
