@@ -1,0 +1,105 @@
+package br.com.strongforge.dao;
+
+import br.com.strongforge.config.ConnectionPoolConfig;
+import br.com.strongforge.model.Lista;
+import br.com.strongforge.model.Usuario;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class ListaDao {
+
+    public void createLista(Lista list){
+        String SQL = "INSERT INTO LISTA (NOME,DATA) VALUES (?,?)";
+
+        try{
+            Connection connection = ConnectionPoolConfig.getConnection();
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            preparedStatement.setString(1,list.getNome());
+            preparedStatement.setString(2, list.getData());
+            preparedStatement.execute();
+
+            System.out.println("Parâmetro inserido com sucesso");
+
+            connection.close();
+
+        }catch(Exception e){
+            System.out.println("Erro na conexão do banco");
+        }
+
+
+    }
+    public List<Lista> findAllLista() {
+        String SQL = "SELECT * FROM LISTA";
+
+
+        try {
+
+            Connection connection = ConnectionPoolConfig.getConnection();
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            List<Lista> list = new ArrayList<>();
+
+            while (resultSet.next()) {
+
+                String listaId = resultSet.getString("id");
+                String listaName = resultSet.getString("nome");
+                String listaEmail = resultSet.getString("data");
+
+
+                Lista lista = new Lista(listaId,listaName,listaEmail);
+
+                list.add(lista);
+
+            }
+
+            System.out.println("sucesso ao selecionar * usuario");
+
+            connection.close();
+
+            return list;
+
+        } catch (Exception e) {
+
+            System.out.println("Falha ao se conectar com o banco");
+
+            return Collections.emptyList();
+
+        }
+
+    }
+
+
+    public void deleteListaById(String listId){
+        String SQL = "DELETE LISTA WHERE ID = ?";
+
+
+        try {
+
+            Connection connection = ConnectionPoolConfig.getConnection();
+
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            preparedStatement.setString(1, listId);
+            preparedStatement.execute();
+
+            System.out.println("success ao deletar o lista pelo ID " + listId);
+
+            connection.close();
+
+        } catch (Exception e) {
+
+            System.out.println("falha ao conectar com o banco");
+
+        }
+    }
+
+}
