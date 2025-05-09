@@ -7,13 +7,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strong Forge</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style2.css">
 </head>
 <body>
     <div class="container">
         <nav>
             <div class="logo">
-                <img src="img/logo01.png" alt="Logo">
+                <img src="img/logo2.png" alt="Logo">
                 <p>"Transforme seu corpo, fortaleça sua mente."</p>
             </div>
             <div class="nav-links">
@@ -26,7 +26,7 @@
                 <a href="home.jsp">Home</a>
                 <a href="personais.html">Personais</a>
                 <a href="cronograma.html">Cronograma</a>
-                <a href="exercicios.html">Exercícios</a>
+                <a href="/findAllExercicio">Exercícios</a>
 
                 <c:if test="${sessionScope.loggedUsuario != null}">
                 <a href="/findAllUsuario">Admin</a>
