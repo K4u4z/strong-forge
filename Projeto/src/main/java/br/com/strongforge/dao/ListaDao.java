@@ -1,26 +1,28 @@
 package br.com.strongforge.dao;
 
 import br.com.strongforge.config.ConnectionPoolConfig;
+import br.com.strongforge.model.Exercicio;
 import br.com.strongforge.model.Lista;
 import br.com.strongforge.model.Usuario;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class ListaDao {
 
-    public void createLista(Lista list){
+    public void createLista(Lista list) {
         String SQL = "INSERT INTO LISTA (NOME,DATA) VALUES (?,?)";
 
-        try{
+        try {
             Connection connection = ConnectionPoolConfig.getConnection();
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
-            preparedStatement.setString(1,list.getNome());
+            preparedStatement.setString(1, list.getNome());
             preparedStatement.setString(2, list.getData());
             preparedStatement.execute();
 
@@ -28,12 +30,14 @@ public class ListaDao {
 
             connection.close();
 
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Erro na conexão do banco");
         }
 
 
     }
+
+
     public List<Lista> findAllLista() {
         String SQL = "SELECT * FROM LISTA";
 
@@ -55,7 +59,7 @@ public class ListaDao {
                 String listaEmail = resultSet.getString("data");
 
 
-                Lista lista = new Lista(listaId,listaName,listaEmail);
+                Lista lista = new Lista(listaId, listaName, listaEmail);
 
                 list.add(lista);
 
@@ -78,7 +82,7 @@ public class ListaDao {
     }
 
 
-    public void deleteListaById(String listId){
+    public void deleteListaById(String listId) {
         String SQL = "DELETE LISTA WHERE ID = ?";
 
 
@@ -102,4 +106,38 @@ public class ListaDao {
         }
     }
 
+    public void cadastrarExerciciosLista(int idLista, List<Exercicio> exercicios) {
+        String SQL = "INSERT INTO LISTA_EXERCICIO_ITEM (lista_exercicio_id, exercicio_id) VALUES (?, ?)";
+
+        try {
+            Connection connection = ConnectionPoolConfig.getConnection();
+
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+
+            for (Exercicio exercicio : exercicios) {
+                preparedStatement.setInt(1, idLista);
+                preparedStatement.setString(2, exercicio.getId());
+                preparedStatement.addBatch();
+            }
+
+            preparedStatement.executeBatch();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
