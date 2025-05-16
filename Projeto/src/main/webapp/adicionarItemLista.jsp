@@ -26,33 +26,17 @@
 
 
 
-                       <form action="/createLista" method="post">
-                       <section>
-                        <label class="">Nome da Lista</label>
-                        <input type="text" name="lista-nome" id="lista-nome"  class="Input_cad" required>
-                        <label class="">Data da lista</label>
-                        <input type="text" name="data-lista" id="data-lista" class="Input_cad" required>
-                      </section>
-                        </form>
-                     <section class="exercises-checklist">
-                         <c:forEach var="exercicio" items="${exercicios}">
-                             <div class="exercise-checklist-item">
-                                 <label class="exercise-checklist-label">
-                                     <input type="checkbox"
-                                            name="exerciciosSelecionados"
-                                            value="${exercicio.id}"
-                                            ${listaExercicios.contains(exercicio.id) ? 'checked' : ''}
-                                            class="exercise-checklist-input">
-                                     <span class="exercise-checklist-custom"></span>
-                                     <span class="exercise-checklist-name">${exercicio.nome}</span>
-                                 </label>
-                             </div>
-                         </c:forEach>
-                     </section>
-                     <br>
-                        <div>
-                        <button  id="Btn_cad" type="submit">Criar</button>
-                        </div>
+                     <h1>Adicionar Exercícios à Lista</h1>
+                      <form action="/CreateExercItem" method="post">
+                          <input type="hidden" name="idLista" value="${param.idLista}">
+
+                          <c:forEach var="exercicio" items="${exercicios}>
+                              <input type="checkbox" name="exercicios" value="${exercicio.id}"> ${exercicio.nome}<br>
+                          </c:forEach>
+
+                          <button type="submit">Adicionar Exercícios</button>
+                      </form>
+
 
 
             </div>

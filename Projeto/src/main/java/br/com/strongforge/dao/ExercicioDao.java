@@ -6,6 +6,7 @@ import br.com.strongforge.model.Exercicio;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -157,17 +158,54 @@ public class ExercicioDao {
                         descricao, image, video);
 
                 connection.close();
-                return exercicio; // Retorna o exercício encontrado
+                return exercicio;
             } else {
                 connection.close();
-                return null; // Retorna null explicitamente se não encontrar
+                return null;
             }
 
         } catch(Exception e) {
             System.out.println("Falha ao se conectar com o banco");
             System.out.println("Erro: " + e.getMessage());
-            return null; // Retorna null em caso de exceção
+            return null;
         }
     }
 
+    public List<Exercicio> listarTodosExercicios() {
+        List<Exercicio> exercicios = new ArrayList<>();
+        String SQL = "SELECT id, nome FROM EXERCICIO";
+
+        try  {
+
+
+            Connection connection = ConnectionPoolConfig.getConnection();
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+
+            while (resultSet.next()) {
+
+                String exercicioId = resultSet.getString("id");
+                String exercicioName = resultSet.getString("nome");
+
+                Exercicio exercicio = new Exercicio(exercicioId,exercicioName);
+
+                exercicios.add(exercicio);
+            }
+            System.out.println("sucesso ao selecionar * exercicio");
+
+            connection.close();
+
+            return exercicios;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+       return null;
+    }
 }
+
+
+

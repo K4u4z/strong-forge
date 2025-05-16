@@ -16,7 +16,7 @@ import java.util.List;
 public class ListaDao {
 
     public void createLista(Lista list) {
-        String SQL = "INSERT INTO LISTA (NOME,DATA) VALUES (?,?)";
+        String SQL = "INSERT INTO LISTA2 (NOME,DATA) VALUES (?,?)";
 
         try {
             Connection connection = ConnectionPoolConfig.getConnection();
@@ -126,6 +126,7 @@ public class ListaDao {
             e.printStackTrace();
         }
     }
+
 }
 
 

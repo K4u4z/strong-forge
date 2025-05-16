@@ -17,6 +17,9 @@ public class Exercicio {
         this.image = image;
         this.video = video;
     }
+    public Exercicio(String id, String nome){
+        this.id = id;
+    }
 
     public String getId() {
         return id;
