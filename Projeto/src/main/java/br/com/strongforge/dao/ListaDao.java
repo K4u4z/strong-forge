@@ -16,7 +16,7 @@ import java.util.List;
 public class ListaDao {
 
     public void createLista(Lista list) {
-        String SQL = "INSERT INTO LISTA (NOME,DATA) VALUES (?,?)";
+        String SQL = "INSERT INTO LISTA2 (ID, NOME,DATA) VALUES (?,?,?)";
 
         try {
             Connection connection = ConnectionPoolConfig.getConnection();
@@ -106,7 +106,20 @@ public class ListaDao {
         }
     }
 
-    public void cadastrarExerciciosLista(int idLista, List<Exercicio> exercicios) {
+    /* public void cadastraTreino() {
+
+        List<Exercicio> exercicios new ArrayList<String>();
+
+        for (Exercicio exercicio: exercicios) {
+
+            cadastrarExerciciosLista(1, exercicio.getId());
+
+        }*/
+
+
+    }
+
+    /*public void cadastrarExerciciosLista(int idLista, int idExercicio) {
         String SQL = "INSERT INTO LISTA_EXERCICIO_ITEM (lista_exercicio_id, exercicio_id) VALUES (?, ?)";
 
         try {
@@ -115,18 +128,19 @@ public class ListaDao {
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
-            for (Exercicio exercicio : exercicios) {
+//            for (Exercicio exercicio : exercicios) {
                 preparedStatement.setInt(1, idLista);
-                preparedStatement.setString(2, exercicio.getId());
-                preparedStatement.addBatch();
-            }
+                preparedStatement.setInt(2, idExercicio);
+
+//            }
 
             preparedStatement.executeBatch();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-}
+
+}*/
 
 
 

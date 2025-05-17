@@ -18,11 +18,11 @@ public class CreateListaServlet  extends HttpServlet{
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String listaId = req.getParameter("id");
-        String listaName = req.getParameter("lista-name");
+        String listaName = req.getParameter("lista-nome");
         String listaData = req.getParameter("lista-data");
 
 
-        System.out.println(listaId);
+
         System.out.println(listaName);
         System.out.println(listaData);
 
@@ -31,10 +31,12 @@ public class CreateListaServlet  extends HttpServlet{
 
         ListaDao listaDao = new ListaDao();
 
+         listaDao.createLista(lista);
 
 
 
-        resp.sendRedirect("lista.jsp");
+        resp.sendRedirect("/listarTodosExercicios");
+
 
 
     }
