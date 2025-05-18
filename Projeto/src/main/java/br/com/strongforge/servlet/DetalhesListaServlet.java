@@ -30,6 +30,6 @@ public class DetalhesListaServlet extends HttpServlet {
         }
 
         req.setAttribute("lista", lista);
-        req.getRequestDispatcher("detalhesExercicios.jsp").forward(req, resp);
+        req.getRequestDispatcher("detalhesLista.jsp").forward(req, resp);
     }
 }
