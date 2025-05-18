@@ -26,17 +26,37 @@
 
 
 
-                     <h1>Adicionar Exercícios à Lista</h1>
+
+
                      <br>
                      <br>
-                     <form action="/CreateExercItem" method="post">
-                         <input type="hidden" name="idLista" value="${param.idLista}">
+                     <form action="/cadastrarExerciciosLista" method="post">
+                         <input type="hidden" name="id" value="${param.id}">
 
-                         <c:forEach var="exercicio" items="${exercicios}">
-                             <input type="checkbox" name="exercicios" value="${exercicio.id}"> ${exercicio.nome}<br>
-                         </c:forEach>
+                         <section>
+                             <h2>Adicionar Exercícios à Lista</h2>
+                         </section>
 
-                         <button type="submit">Adicionar Exercícios</button>
+                         <section class="exercises-checklist">
+                             <c:forEach var="exercicio" items="${exercicios}">
+                                 <div class="exercise-checklist-item">
+                                     <label class="exercise-checklist-label">
+                                         <input type="checkbox"
+                                                name="exerciciosSelecionados"
+                                                value="${exercicio.id}"
+                                                class="exercise-checklist-input">
+                                         <span class="exercise-checklist-custom"></span>
+                                         <span class="exercise-checklist-name">${exercicio.nome}</span>
+                                     </label>
+                                 </div>
+                             </c:forEach>
+                         </section>
+
+                         <br>
+                         <div>
+                             <button id="Btn_cad" type="submit">Adicionar Exercícios</button>
+                         </div>
+
                      </form>
 
 

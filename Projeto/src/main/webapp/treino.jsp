@@ -23,32 +23,34 @@
                 <a href="exercicios.jsp">Exercícios</a>
             </div>
         </nav>
+                       <div><a href="lista.jsp">Adicionar Lista</a></div>
+                      <section>
+                       <tr>
+
+                           <th>Lista</th>
+                           <th>Data</th>
+                       </tr>
+                       <section>
+                       <section>
+                       <c:forEach var="Lista" items="${listas}">
+                           <tr>
+
+                               <td>${Lista.nome}</td>
+                               <td>${Lista.data}</td>
+                               <td>
+                               <span class="divider">|</span>
+                                 <form action="/detalhesListaById" method="GET">
+                                     <input type="hidden" name="id" value="${Lista.id}">
+                                     <button type="submit" class="action-btn delete-btn">Ver detalhes</button>
+                                 </form>
+                               <br>
+                               <br>
+                <section>
 
 
+                       </c:forEach>
 
-
-                       <form action="/createLista" method="post">
-
-                           <input type="hidden" name="id" value="${param.id}">
-
-                           <label>Nome da Lista</label>
-                           <input type="text" name="lista-nome" required>
-
-                           <label>Data da Lista</label>
-                           <input type="date" name="data-lista" required>
-
-                           <button type="submit">Criar Lista</button>
-                       </form>
-
-
-
-
-
-            </div>
-        </main>
-    </div>
-
-
+<br>
 
     <footer>
         <div class="footer-content">
@@ -75,8 +77,6 @@
 
 
 
-
 </body>
 
 </html>
-

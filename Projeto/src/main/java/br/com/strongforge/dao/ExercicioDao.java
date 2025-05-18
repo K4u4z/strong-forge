@@ -169,44 +169,35 @@ public class ExercicioDao {
             System.out.println("Falha ao se conectar com o banco");
             System.out.println("Erro: " + e.getMessage());
             return null;
+
         }
     }
 
     public List<Exercicio> listarTodosExercicios() {
         List<Exercicio> exercicios = new ArrayList<>();
-        String SQL = "SELECT id, NOME FROM EXERCICIO";
+        String SQL = "SELECT id, nome FROM EXERCICIO";
 
-        try  {
-
-
-            Connection connection = ConnectionPoolConfig.getConnection();
-
-            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
-
-            ResultSet resultSet = preparedStatement.executeQuery();
-
+        try (Connection connection = ConnectionPoolConfig.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+             ResultSet resultSet = preparedStatement.executeQuery()) {
 
             while (resultSet.next()) {
-
                 String exercicioId = resultSet.getString("id");
                 String exercicioName = resultSet.getString("nome");
 
+
                 Exercicio exercicio = new Exercicio(exercicioId,exercicioName);
+
 
                 exercicios.add(exercicio);
             }
-            System.out.println("sucesso ao selecionar * exercicio");
-
-            connection.close();
-
             return exercicios;
         } catch (SQLException e) {
             e.printStackTrace();
-        }
+            return Collections.emptyList();
 
-       return null;
-    }
 }
+    }
 
 
 

@@ -11,31 +11,38 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import java.util.Random;
+import java.util.UUID;
+
+
 @WebServlet("/createLista")
 public class CreateListaServlet  extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String listaId = req.getParameter("id");
+// Gera um novo ID se não existir (evita enviar ID vazio)
+
+
+
+        Random random = new Random();
+        int numericId = random.nextInt(Integer.MAX_VALUE);
+        String listaId = String.valueOf(numericId);
+
+
         String listaName = req.getParameter("lista-nome");
-        String listaData = req.getParameter("lista-data");
+        String listaData = req.getParameter("data-lista");
 
+        // Cria a lista com o ID (novo ou existente)
+        Lista lista = new Lista(listaId, listaName, listaData);
 
-
-        System.out.println(listaName);
-        System.out.println(listaData);
-
-        Lista lista = new Lista(listaId,listaName,listaData);
-
-
+        // Salva no banco
         ListaDao listaDao = new ListaDao();
+        listaDao.createLista(lista);
 
-         listaDao.createLista(lista);
+        // Redireciona para a próxima página com o ID
+        resp.sendRedirect("/listarTodosExercicios?id=" + listaId);
 
-
-
-        resp.sendRedirect("/listarTodosExercicios");
 
 
 
