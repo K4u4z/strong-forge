@@ -11,10 +11,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import br.com.strongforge.model.Exercicio;
+
+
+
 import java.util.List;
 
 @WebServlet("/cadastrarExerciciosLista")
 public class AdicionarExercicios extends HttpServlet {
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String listaId = req.getParameter("id");
@@ -30,4 +36,14 @@ public class AdicionarExercicios extends HttpServlet {
 
         resp.sendRedirect("listas.jsp");
     }
+
+
+    List<Exercicio> exercicios = new ArrayList<Exercicio>();
+
+      /* for(Exercicio exercicio : exercicios) {
+
+        listaDao.cadastrarExerciciosLista(, exercicio.getId());
+
+    }*/
+
 }

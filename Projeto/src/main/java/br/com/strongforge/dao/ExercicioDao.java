@@ -169,6 +169,7 @@ public class ExercicioDao {
             System.out.println("Falha ao se conectar com o banco");
             System.out.println("Erro: " + e.getMessage());
             return null;
+
         }
     }
 
@@ -194,10 +195,9 @@ public class ExercicioDao {
         } catch (SQLException e) {
             e.printStackTrace();
             return Collections.emptyList();
-        }
-    }
 
 }
+    }
 
 
 

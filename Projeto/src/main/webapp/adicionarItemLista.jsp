@@ -27,6 +27,7 @@
 
 
 
+
                      <br>
                      <br>
                      <form action="/cadastrarExerciciosLista" method="post">
@@ -55,6 +56,7 @@
                          <div>
                              <button id="Btn_cad" type="submit">Adicionar Exercícios</button>
                          </div>
+
                      </form>
 
 

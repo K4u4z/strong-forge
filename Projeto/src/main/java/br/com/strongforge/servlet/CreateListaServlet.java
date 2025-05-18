@@ -10,14 +10,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+
 import java.util.Random;
 import java.util.UUID;
+
 
 @WebServlet("/createLista")
 public class CreateListaServlet  extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
 // Gera um novo ID se não existir (evita enviar ID vazio)
 
 

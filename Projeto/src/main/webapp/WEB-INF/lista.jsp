@@ -26,29 +26,38 @@
 
 
 
-
                        <form action="/createLista" method="post">
-
-                           <input type="hidden" name="id" value="${param.id}">
-
-                           <label>Nome da Lista</label>
-                           <input type="text" name="lista-nome" required>
-
-                           <label>Data da Lista</label>
-                           <input type="date" name="data-lista" required>
-
-                           <button type="submit">Criar Lista</button>
-                       </form>
-
-
-
+                       <section>
+                        <label class="">Nome da Lista</label>
+                        <input type="text" name="lista-nome" id="lista-nome"  class="Input_cad" required>
+                        <label class="">Data da lista</label>
+                        <input type="text" name="data-lista" id="data-lista" class="Input_cad" required>
+                      </section>
+                        </form>
+                     <section class="exercises-checklist">
+                         <c:forEach var="exercicio" items="${exercicios}">
+                             <div class="exercise-checklist-item">
+                                 <label class="exercise-checklist-label">
+                                     <input type="checkbox"
+                                            name="exerciciosSelecionados"
+                                            value="${exercicio.id}"
+                                            ${listaExercicios.contains(exercicio.id) ? 'checked' : ''}
+                                            class="exercise-checklist-input">
+                                     <span class="exercise-checklist-custom"></span>
+                                     <span class="exercise-checklist-name">${exercicio.nome}</span>
+                                 </label>
+                             </div>
+                         </c:forEach>
+                     </section>
+                     <br>
+                        <div>
+                        <button  id="Btn_cad" type="submit">Criar</button>
+                        </div>
 
 
             </div>
         </main>
     </div>
-
-
 
     <footer>
         <div class="footer-content">
@@ -72,9 +81,6 @@
             &copy; 2023 Strong Gym. Todos os direitos reservados.
         </div>
     </footer>
-
-
-
 
 </body>
 

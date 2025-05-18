@@ -16,6 +16,7 @@ public class ListExercicioItemServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         String listaId = req.getParameter("id");
 
 
@@ -32,4 +33,5 @@ public class ListExercicioItemServlet extends HttpServlet {
         req.getRequestDispatcher("adicionarItemLista.jsp").forward(req, resp);
     }
     }
+
 

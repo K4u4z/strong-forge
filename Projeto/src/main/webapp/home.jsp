@@ -25,7 +25,9 @@
                 <br>
                 <a href="home.jsp">Home</a>
                 <a href="personais.html">Personais</a>
+
                 <a href="/findAllLista">Treinos</a>
+
                 <a href="/findAllExercicio">Exercícios</a>
 
                 <c:if test="${sessionScope.loggedUsuario != null}">
