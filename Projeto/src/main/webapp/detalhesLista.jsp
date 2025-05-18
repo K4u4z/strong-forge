@@ -10,43 +10,51 @@
 </head>
 <body>
     <div class="container">
-        <nav>
-            <div class="logo">
-                <img src="img/logo01.png" alt="Logo">
-                <p>"Transforme seu corpo, fortaleça sua mente."</p>
-            </div>
-            <div class="nav-links">
-                <div class="auth-buttons">
-                    <a href="login.jsp" class="btn-login">Login</a>
-                    <a href="cadastro.jsp" class="btn-cadastro">Cadastro</a>
-                </div>
-                <br>
-                <a href="home.jsp">Home</a>
-                <a href="personais.html">Personais</a>
-                <a href="cronograma.html">Cronograma</a>
-                <a href="exercicios.html">Exercícios</a>
-                <c:if test="${sessionScope.loggedUsuario != null}">
-                    <a href="/findAllUsuario">Admin</a>
-                </c:if>
-            </div>
-        </nav>
+       <nav>
+                  <div class="logo">
+                      <img src="img/logo01.png" alt="Logo">
+                      <p>"Transforme seu corpo, fortaleça sua mente."</p>
+                  </div>
+                  <div class="nav-links">
+                      <div class="auth-buttons">
+                          <a href="login.jsp" class="btn-login">Login</a>
+                          <a href="cadastro.jsp" class="btn-cadastro">Cadastro</a>
+                      </div>
+
+                      <br>
+                      <a href="home.jsp">Home</a>
+                      <a href="personais.html">Personais</a>
+
+                      <a href="/findAllLista">Treinos</a>
+
+                      <a href="/findAllExercicio">Exercícios</a>
+
+                      <c:if test="${sessionScope.loggedUsuario != null}">
+                      <a href="/findAllUsuario">Admin</a>
+                       </c:if>
+
+                  </div>
+              </nav>
 
         <div class="exercicio-detalhes">
             <h2>${lista.nome}</h2>
+            <p class="lista-data">Data: ${lista.data}</p> <!-- Adicionando a data -->
 
             <div class="exercicios-container">
-                <c:forEach var="exercicio" items="${lista.exercicios}">
-                    <div class="exercise-card">
-                        <img src="${exercicio.image}" alt="${exercicio.nome}">
-                        <h3>${exercicio.nome}</h3>
-                        <p><strong>Grupo Muscular:</strong> ${exercicio.agrupamento}</p>
-                        <p><strong>Nível:</strong> ${exercicio.nivel}</p>
-                        <p>${exercicio.descricao}</p>
-                        <c:if test="${not empty exercicio.video}">
-                            <a href="${exercicio.video}" target="_blank" class="btn-video">Ver Vídeo</a>
-                        </c:if>
-                    </div>
-                </c:forEach>
+                <c:choose>
+                    <c:when test="${not empty lista.exercicios}">
+                        <c:forEach var="exercicio" items="${lista.exercicios}">
+                            <div class="exercise-card">
+                                <h3>${exercicio.nome}</h3>
+
+
+                            </div>
+                        </c:forEach>
+                    </c:when>
+                    <c:otherwise>
+                        <p>Nenhum exercício encontrado nesta lista.</p>
+                    </c:otherwise>
+                </c:choose>
             </div>
         </div>
 

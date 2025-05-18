@@ -16,24 +16,15 @@ import java.util.List;
 public class ListaDao {
 
     public void createLista(Lista list) {
-
         String SQL = "INSERT INTO LISTA (ID,NOME,DATA) VALUES (?,?,?)";
-
-    
-
 
         try {
             Connection connection = ConnectionPoolConfig.getConnection();
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
-
             preparedStatement.setString(1,list.getId());
             preparedStatement.setString(2, list.getNome());
             preparedStatement.setString(3, list.getData());
-
-            preparedStatement.setString(1, list.getNome());
-            preparedStatement.setString(2, list.getData());
-
             preparedStatement.execute();
 
             System.out.println("Parâmetro inserido com sucesso");
@@ -120,6 +111,7 @@ public class ListaDao {
         String SQL = "SELECT \n" +
                 "    L.id AS lista_id,\n" +
                 "    L.nome AS nome_lista,\n" +
+                "    L.data, \n" +  // Adicionei a data que estava faltando
                 "    E.id AS exercicio_id,\n" +
                 "    E.nome AS nome_exercicio,\n" +
                 "    E.agrupamento,\n" +
@@ -147,7 +139,8 @@ public class ListaDao {
                 if (lista == null) {
                     lista = new Lista(
                             resultSet.getString("lista_id"),
-                            resultSet.getString("nome_lista")
+                            resultSet.getString("nome_lista"),
+                            resultSet.getString("data")  // Adicionando a data
                     );
                 }
 
@@ -176,8 +169,6 @@ public class ListaDao {
             return null;
         }
     }
-
-
     /* public void cadastraTreino() {
 
         List<Exercicio> exercicios new ArrayList<String>();
@@ -187,7 +178,6 @@ public class ListaDao {
             cadastrarExerciciosLista(1, exercicio.getId());
 
         }*/
-
 
 
 
@@ -204,35 +194,13 @@ public class ListaDao {
                 preparedStatement.addBatch();
             }
 
-    }
-
-    /*public void cadastrarExerciciosLista(int idLista, int idExercicio) {
-        String SQL = "INSERT INTO LISTA_EXERCICIO_ITEM (lista_exercicio_id, exercicio_id) VALUES (?, ?)";
-
-        try {
-            Connection connection = ConnectionPoolConfig.getConnection();
-
-
-            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
-
-//            for (Exercicio exercicio : exercicios) {
-                preparedStatement.setInt(1, idLista);
-                preparedStatement.setInt(2, idExercicio);
-
-//            }
-
-
             preparedStatement.executeBatch();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-
 }
-=======
-}*/
-
 
 
 
