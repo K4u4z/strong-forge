@@ -16,14 +16,15 @@ import java.util.List;
 public class ListaDao {
 
     public void createLista(Lista list) {
-        String SQL = "INSERT INTO LISTA2 (NOME,DATA) VALUES (?,?)";
+        String SQL = "INSERT INTO LISTA (ID,NOME,DATA) VALUES (?,?,?)";
 
         try {
             Connection connection = ConnectionPoolConfig.getConnection();
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
-            preparedStatement.setString(1, list.getNome());
-            preparedStatement.setString(2, list.getData());
+            preparedStatement.setString(1,list.getId());
+            preparedStatement.setString(2, list.getNome());
+            preparedStatement.setString(3, list.getData());
             preparedStatement.execute();
 
             System.out.println("Parâmetro inserido com sucesso");
@@ -106,18 +107,28 @@ public class ListaDao {
         }
     }
 
-    public void cadastrarExerciciosLista(int idLista, List<Exercicio> exercicios) {
-        String SQL = "INSERT INTO LISTA_EXERCICIO_ITEM (lista_exercicio_id, exercicio_id) VALUES (?, ?)";
+    /* public void cadastraTreino() {
 
-        try {
-            Connection connection = ConnectionPoolConfig.getConnection();
+        List<Exercicio> exercicios new ArrayList<String>();
+
+        for (Exercicio exercicio: exercicios) {
+
+            cadastrarExerciciosLista(1, exercicio.getId());
+
+        }*/
 
 
-            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
-            for (Exercicio exercicio : exercicios) {
-                preparedStatement.setInt(1, idLista);
-                preparedStatement.setString(2, exercicio.getId());
+
+    public void cadastrarExerciciosLista(String idLista, List<String> idExercicios) {
+        String SQL = "INSERT INTO LISTA_EXERCICIO_ITEM (lista_id, exercicio_id) VALUES (?, ?)";
+
+        try (Connection connection = ConnectionPoolConfig.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(SQL)) {
+
+            for (String idExercicio : idExercicios) {
+                preparedStatement.setString(1, idLista);
+                preparedStatement.setString(2, idExercicio);
                 preparedStatement.addBatch();
             }
 

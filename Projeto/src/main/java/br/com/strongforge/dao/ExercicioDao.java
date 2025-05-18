@@ -13,18 +13,19 @@ import java.util.List;
 
 public class ExercicioDao {
     public void createExercicio(Exercicio exercicio){
-        String SQL = "INSERT INTO EXERCICIO (NOME,AGRUPAMENTO,NIVEL,DESCRICAO,IMAGE,VIDEO) VALUES (?,?,?,?,?,?)";
+        String SQL = "INSERT INTO EXERCICIO (ID,NOME,AGRUPAMENTO,NIVEL,DESCRICAO,IMAGE,VIDEO) VALUES (?,?,?,?,?,?,?)";
 
         try{
             Connection connection = ConnectionPoolConfig.getConnection();
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
-            preparedStatement.setString(1,exercicio.getNome());
-            preparedStatement.setString(2, exercicio.getAgrupamento());
-            preparedStatement.setString(3, exercicio.getNivel());
-            preparedStatement.setString(4, exercicio.getDescricao());
-            preparedStatement.setString(5, exercicio.getImage());
-            preparedStatement.setString(6, exercicio.getVideo());
+            preparedStatement.setString(1,exercicio.getId());
+            preparedStatement.setString(2,exercicio.getNome());
+            preparedStatement.setString(3, exercicio.getAgrupamento());
+            preparedStatement.setString(4, exercicio.getNivel());
+            preparedStatement.setString(5, exercicio.getDescricao());
+            preparedStatement.setString(6, exercicio.getImage());
+            preparedStatement.setString(7, exercicio.getVideo());
             preparedStatement.execute();
 
             System.out.println("Parâmetro inserido com sucesso");
@@ -175,36 +176,27 @@ public class ExercicioDao {
         List<Exercicio> exercicios = new ArrayList<>();
         String SQL = "SELECT id, nome FROM EXERCICIO";
 
-        try  {
-
-
-            Connection connection = ConnectionPoolConfig.getConnection();
-
-            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
-
-            ResultSet resultSet = preparedStatement.executeQuery();
-
+        try (Connection connection = ConnectionPoolConfig.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+             ResultSet resultSet = preparedStatement.executeQuery()) {
 
             while (resultSet.next()) {
-
                 String exercicioId = resultSet.getString("id");
                 String exercicioName = resultSet.getString("nome");
 
+
                 Exercicio exercicio = new Exercicio(exercicioId,exercicioName);
+
 
                 exercicios.add(exercicio);
             }
-            System.out.println("sucesso ao selecionar * exercicio");
-
-            connection.close();
-
             return exercicios;
         } catch (SQLException e) {
             e.printStackTrace();
+            return Collections.emptyList();
         }
-
-       return null;
     }
+
 }
 
 

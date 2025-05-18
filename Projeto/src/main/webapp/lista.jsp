@@ -24,25 +24,25 @@
             </div>
         </nav>
 
-   <form action="/createLista" method="post">
-                       <section>
-                        <label class="">Nome da Lista</label>
-                        <input type="text" name="lista-nome" id="lista-nome"  class="Input_cad" required>
-                        <label class="">Data da lista</label>
-                        <input type="date" name="data-lista" id="data-lista" class="Input_cad" required>
-                      </section>
-                      <br>
-                        <div>
-                          <button  id="Btn_cad" type="submit">Criar</button>
-                               </div>
-                        </form>
 
+
+                       <form action="/createLista" method="post">
+
+                           <input type="hidden" name="id" value="${param.id}">
+
+                           <label>Nome da Lista</label>
+                           <input type="text" name="lista-nome" required>
+
+                           <label>Data da Lista</label>
+                           <input type="date" name="data-lista" required>
+
+                           <button type="submit">Criar Lista</button>
+                       </form>
 
 
 
             </div>
         </main>
-    </div>
     </div>
 
     <footer>
@@ -67,6 +67,7 @@
             &copy; 2023 Strong Gym. Todos os direitos reservados.
         </div>
     </footer>
+
 
 </body>
 
