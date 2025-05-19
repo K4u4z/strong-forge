@@ -11,32 +11,65 @@
 
 <body>
     <div class="container">
-        <nav>
-            <div class="logo">
-                <img src="img/logo01.png" alt="Logo">
-                <p>"Transforme seu corpo, fortaleça sua mente."</p>
-            </div>
-            <div class="nav-links">
-                <a href="home.jsp">Home</a>
-                <a href="personais.html">Personais</a>
-                <a href="cronograma.html">Cronograma</a>
-                <a href="exercicios.jsp">Exercícios</a>
-            </div>
-        </nav>
+         <nav>
+                    <div class="logo">
+                        <img src="img/logo01.png" alt="Logo">
+                        <p>"Transforme seu corpo, fortaleça sua mente."</p>
+                    </div>
+                    <div class="nav-links">
+                        <div class="auth-buttons">
+                            <a href="login.jsp" class="btn-login">Login</a>
+                            <a href="cadastro.jsp" class="btn-cadastro">Cadastro</a>
+                        </div>
+
+                        <br>
+                        <a href="home.jsp">Home</a>
+                        <a href="personais.html">Personais</a>
+
+                        <a href="/findAllLista">Treinos</a>
+
+                        <a href="/findAllExercicio">Exercícios</a>
+
+                        <c:if test="${sessionScope.loggedUsuario != null}">
+                        <a href="/findAllUsuario">Admin</a>
+                         </c:if>
+
+                    </div>
+                </nav>
 
 
 
-                     <h1>Adicionar Exercícios à Lista</h1>
+
+
                      <br>
                      <br>
-                     <form action="/CreateExercItem" method="post">
-                         <input type="hidden" name="idLista" value="${param.idLista}">
+                     <form action="/cadastrarExerciciosLista" method="post">
+                         <input type="hidden" name="id" value="${param.id}">
 
-                         <c:forEach var="exercicio" items="${exercicios}">
-                             <input type="checkbox" name="exercicios" value="${exercicio.id}"> ${exercicio.nome}<br>
-                         </c:forEach>
+                         <section>
+                             <h2>Adicionar Exercícios à Lista</h2>
+                         </section>
 
-                         <button type="submit">Adicionar Exercícios</button>
+                         <section class="exercises-checklist">
+                             <c:forEach var="exercicio" items="${exercicios}">
+                                 <div class="exercise-checklist-item">
+                                     <label class="exercise-checklist-label">
+                                         <input type="checkbox"
+                                                name="exerciciosSelecionados"
+                                                value="${exercicio.id}"
+                                                class="exercise-checklist-input">
+                                         <span class="exercise-checklist-custom"></span>
+                                         <span class="exercise-checklist-name">${exercicio.nome}</span>
+                                     </label>
+                                 </div>
+                             </c:forEach>
+                         </section>
+
+                         <br>
+                         <div>
+                             <button id="Btn_cad" type="submit">Adicionar Exercícios</button>
+                         </div>
+
                      </form>
 
 

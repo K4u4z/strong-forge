@@ -12,15 +12,15 @@ import java.util.Collections;
 import java.util.List;
 
 public class ExercicioDao {
-    public void createExercicio(Exercicio exercicio){
+    public void createExercicio(Exercicio exercicio) {
         String SQL = "INSERT INTO EXERCICIO (ID,NOME,AGRUPAMENTO,NIVEL,DESCRICAO,IMAGE,VIDEO) VALUES (?,?,?,?,?,?,?)";
 
-        try{
+        try {
             Connection connection = ConnectionPoolConfig.getConnection();
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
-            preparedStatement.setString(1,exercicio.getId());
-            preparedStatement.setString(2,exercicio.getNome());
+            preparedStatement.setString(1, exercicio.getId());
+            preparedStatement.setString(2, exercicio.getNome());
             preparedStatement.setString(3, exercicio.getAgrupamento());
             preparedStatement.setString(4, exercicio.getNivel());
             preparedStatement.setString(5, exercicio.getDescricao());
@@ -32,9 +32,9 @@ public class ExercicioDao {
 
             connection.close();
 
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Erro na conexão do banco");
-            System.out.println("Error"+ e.getMessage());
+            System.out.println("Error" + e.getMessage());
         }
 
 
@@ -64,7 +64,7 @@ public class ExercicioDao {
                 String exercicioImage = resultSet.getString("image");
                 String exercicioVideo = resultSet.getString("video");
 
-                Exercicio exercicio = new Exercicio(exercicioId,exercicioName,exercicioAgrup,exercicioNivel,exercicioDescricao,exercicioImage,exercicioVideo);
+                Exercicio exercicio = new Exercicio(exercicioId, exercicioName, exercicioAgrup, exercicioNivel, exercicioDescricao, exercicioImage, exercicioVideo);
 
                 exercicios.add(exercicio);
 
@@ -86,7 +86,8 @@ public class ExercicioDao {
         }
 
     }
-    public void updateExercicio(Exercicio exercicio){
+
+    public void updateExercicio(Exercicio exercicio) {
         String SQL = "UPDATE EXERCICIO SET NOME = ? WHERE ID = ?";
 
         try {
@@ -113,7 +114,7 @@ public class ExercicioDao {
 
     }
 
-    public void deleteExercicioById(String exercicioId){
+    public void deleteExercicioById(String exercicioId) {
         String SQL = "DELETE EXERCICIO WHERE ID = ?";
 
 
@@ -136,6 +137,7 @@ public class ExercicioDao {
 
         }
     }
+
     public Exercicio detalhesExercicioById(String exercicioId) {
         String SQL = "SELECT * FROM EXERCICIO WHERE ID = ?";
 
@@ -165,46 +167,38 @@ public class ExercicioDao {
                 return null;
             }
 
-        } catch(Exception e) {
+        } catch (Exception e) {
             System.out.println("Falha ao se conectar com o banco");
             System.out.println("Erro: " + e.getMessage());
             return null;
+
         }
     }
 
     public List<Exercicio> listarTodosExercicios() {
         List<Exercicio> exercicios = new ArrayList<>();
-        String SQL = "SELECT id, NOME FROM EXERCICIO";
+        String SQL = "SELECT id, nome FROM EXERCICIO";
 
-        try  {
-
-
-            Connection connection = ConnectionPoolConfig.getConnection();
-
-            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
-
-            ResultSet resultSet = preparedStatement.executeQuery();
-
+        try (Connection connection = ConnectionPoolConfig.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+             ResultSet resultSet = preparedStatement.executeQuery()) {
 
             while (resultSet.next()) {
-
                 String exercicioId = resultSet.getString("id");
                 String exercicioName = resultSet.getString("nome");
 
-                Exercicio exercicio = new Exercicio(exercicioId,exercicioName);
+
+                Exercicio exercicio = new Exercicio(exercicioId, exercicioName);
+
 
                 exercicios.add(exercicio);
             }
-            System.out.println("sucesso ao selecionar * exercicio");
-
-            connection.close();
-
             return exercicios;
         } catch (SQLException e) {
             e.printStackTrace();
-        }
+            return Collections.emptyList();
 
-       return null;
+        }
     }
 }
 

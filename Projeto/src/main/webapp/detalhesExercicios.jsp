@@ -11,29 +11,31 @@
 </head>
 <body>
     <div class="container">
-        <nav>
-            <div class="logo">
-                <img src="img/logo01.png" alt="Logo">
-                <p>"Transforme seu corpo, fortaleça sua mente."</p>
-            </div>
-            <div class="nav-links">
-                <div class="auth-buttons">
-                    <a href="login.jsp" class="btn-login">Login</a>
-                    <a href="cadastro.jsp" class="btn-cadastro">Cadastro</a>
-                </div>
+       <nav>
+                  <div class="logo">
+                      <img src="img/logo01.png" alt="Logo">
+                      <p>"Transforme seu corpo, fortaleça sua mente."</p>
+                  </div>
+                  <div class="nav-links">
+                      <div class="auth-buttons">
+                          <a href="login.jsp" class="btn-login">Login</a>
+                          <a href="cadastro.jsp" class="btn-cadastro">Cadastro</a>
+                      </div>
 
-                <br>
-                <a href="home.jsp">Home</a>
-                <a href="personais.html">Personais</a>
-                <a href="cronograma.html">Cronograma</a>
-                <a href="exercicios.html">Exercícios</a>
+                      <br>
+                      <a href="home.jsp">Home</a>
+                      <a href="personais.html">Personais</a>
 
-                <c:if test="${sessionScope.loggedUsuario != null}">
-                <a href="/findAllUsuario">Admin</a>
-                 </c:if>
+                      <a href="/findAllLista">Treinos</a>
 
-            </div>
-        </nav>
+                      <a href="/findAllExercicio">Exercícios</a>
+
+                      <c:if test="${sessionScope.loggedUsuario != null}">
+                      <a href="/findAllUsuario">Admin</a>
+                       </c:if>
+
+                  </div>
+              </nav>
 
        <div class="exercicio-detalhes">
 
