@@ -24,7 +24,7 @@
 
                 <br>
                 <a href="home.jsp">Home</a>
-                <a href="personais.html">Personais</a>
+                <a href="/findAllPersonal">Personais</a>
 
                 <a href="/findAllLista">Treinos</a>
 

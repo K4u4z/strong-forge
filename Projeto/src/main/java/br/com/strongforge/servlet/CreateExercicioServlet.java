@@ -70,7 +70,7 @@ public class CreateExercicioServlet extends HttpServlet {
 
             } catch (Exception ex) {
 
-                requestParameters.put("img", "img/default-car.jpg");
+                requestParameters.put("img", "img/default-exercicio.jpg");
 
             }
 
