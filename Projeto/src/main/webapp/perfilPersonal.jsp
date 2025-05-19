@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +18,7 @@
             </div>
             <div class="nav-links">
                 <a href="home.jsp">Home</a>
-                <a href="personais.html">Personais</a>
+                <a href="personal.jsp">Personais</a>
                 <a href="cronograma.html">Cronograma</a>
                 <a href="exercicios.jsp">Exercícios</a>
 
@@ -29,10 +30,10 @@
                 <h2>Personal Trainer </h2>
                 <div class="trainer-card">
                     <div class="trainer-photo">
-                        <img src="https://via.placeholder.com/150" alt="João Gabriel">
+                        <img src="${personais.image}" alt="${personais.image}">
                     </div>
                     <div class="trainer-info">
-                        <h3>João Gabriel</h3>
+                        <h3>${personais.nome}</h3>
                         <p class="age-location">26 anos | São Paulo</p>
                         <p class="education">Formação: Senac</p>
 

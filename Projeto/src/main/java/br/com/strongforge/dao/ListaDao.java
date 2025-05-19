@@ -111,7 +111,7 @@ public class ListaDao {
         String SQL = "SELECT \n" +
                 "    L.id AS lista_id,\n" +
                 "    L.nome AS nome_lista,\n" +
-                "    L.data, \n" +  // Adicionei a data que estava faltando
+                "    L.data, \n" +
                 "    E.id AS exercicio_id,\n" +
                 "    E.nome AS nome_exercicio,\n" +
                 "    E.agrupamento,\n" +
