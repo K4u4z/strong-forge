@@ -24,18 +24,33 @@
 
                       <br>
                       <a href="home.jsp">Home</a>
-                      <a href="personais.html">Personais</a>
+                                     <a href="/findAllPersonal">Personais</a>
 
-                      <a href="/findAllLista">Treinos</a>
+                                     <a href="/findAllLista">Treinos</a>
 
-                      <a href="/findAllExercicio">Exercícios</a>
+                                     <a href="/findAllExercicio">Exercícios</a>
 
-                      <c:if test="${sessionScope.loggedUsuario != null}">
-                      <a href="/findAllUsuario">Admin</a>
-                       </c:if>
+                                       <c:if test="${sessionScope.loggedUsuario != null}">
+                                                    <a href="admin.jsp">Admin</a>
+                                                     </c:if>
 
                   </div>
               </nav>
+
+              <section class="exercise-categories">
+                          <h2>Treinos</h2>
+                          <div class="category-buttons">
+                              <button class="category-btn active" data-category="all">Todos</button>
+                              <button class="category-btn" data-category="Segunda">Segunda</button>
+                              <button class="category-btn" data-category="Terça">Terça</button>
+                              <button class="category-btn" data-category="Quarta">Quarta</button>
+                              <button class="category-btn" data-category="Quinta">Quinta</button>
+                              <button class="category-btn" data-category="Sexta">Sexta</button>
+                              <button class="category-btn" data-category="Sabado">Sabado</button>
+                              <button class="category-btn" data-category="Domingo">Domingo</button>
+                          </div>
+                      </section>
+
                        <div><a href="lista.jsp">Adicionar Lista</a></div>
                       <section>
                        <tr>

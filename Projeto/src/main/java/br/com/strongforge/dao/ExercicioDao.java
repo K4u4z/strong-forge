@@ -87,6 +87,50 @@ public class ExercicioDao {
 
     }
 
+    public List<Exercicio> findAllExercicioAdmin() {
+        String SQL = "SELECT * FROM EXERCICIO";
+
+
+        try {
+
+            Connection connection = ConnectionPoolConfig.getConnection();
+
+            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            List<Exercicio> exercicios = new ArrayList<>();
+
+            while (resultSet.next()) {
+
+                String exercicioId = resultSet.getString("id");
+                String exercicioName = resultSet.getString("nome");
+                String exercicioAgrup = resultSet.getString("agrupamento");
+
+
+                Exercicio exercicio = new Exercicio(exercicioId, exercicioName, exercicioAgrup);
+
+                exercicios.add(exercicio);
+
+            }
+
+            System.out.println("sucesso ao selecionar * exercicio");
+
+            connection.close();
+
+            return exercicios;
+
+        } catch (Exception e) {
+
+            System.out.println("Falha ao se conectar com o banco");
+            System.out.println("Error" + e.getMessage());
+
+            return Collections.emptyList();
+
+        }
+
+    }
+
     public void updateExercicio(Exercicio exercicio) {
         String SQL = "UPDATE EXERCICIO SET NOME = ? WHERE ID = ?";
 

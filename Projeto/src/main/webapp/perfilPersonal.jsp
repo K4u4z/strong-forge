@@ -17,10 +17,16 @@
                 <p>"Transforme seu corpo, fortaleça sua mente."</p>
             </div>
             <div class="nav-links">
-                <a href="home.jsp">Home</a>
-                <a href="personal.jsp">Personais</a>
-                <a href="cronograma.html">Cronograma</a>
-                <a href="exercicios.jsp">Exercícios</a>
+              <a href="home.jsp">Home</a>
+                             <a href="/findAllPersonal">Personais</a>
+
+                             <a href="/findAllLista">Treinos</a>
+
+                             <a href="/findAllExercicio">Exercícios</a>
+
+                               <c:if test="${sessionScope.loggedUsuario != null}">
+                                            <a href="admin.jsp">Admin</a>
+                                             </c:if>
 
             </div>
         </nav>
@@ -48,12 +54,12 @@
                         </div>
 
                         <div class="services">
-                            <h4>Serviços:</h4>
-                            <p>Treinamento pessoal | Planejamento personalizado</p>
+                            <h4>Descrição:</h4>
+
                         </div>
 
                         <div class="philosophy">
-                            <p>"O treinamento pessoal é mais do que apenas exercícios, é sobre transformar vidas."</p>
+                            <p>${personais.nome}</p>
                         </div>
                         <button class="contact-btn">Entrar em Contato</button>
 
