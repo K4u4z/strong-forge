@@ -1,7 +1,8 @@
 package br.com.strongforge.servlet;
 
-import br.com.strongforge.dao.UsuarioDao;
-import br.com.strongforge.model.Usuario;
+import br.com.strongforge.dao.ExercicioDao;
+import br.com.strongforge.model.Exercicio;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,14 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet({"/findAllUsuario", "/admin/findAllUsuario"})
-public class ListUsuarioServlet extends HttpServlet {
+@WebServlet({"/findAllExercicioAdmin"})
+public class ListExercicioAdminServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Usuario> usuarios = new UsuarioDao().findAllUsuario();
+        List<Exercicio> exercicios = new ExercicioDao().findAllExercicioAdmin();
 
-        req.setAttribute("usuarios", usuarios);
+        req.setAttribute("exercicios", exercicios);
 
-        req.getRequestDispatcher("adminUsuario.jsp").forward(req,resp);
+        req.getRequestDispatcher("adminExercicio.jsp").forward(req,resp);
     }
 }
