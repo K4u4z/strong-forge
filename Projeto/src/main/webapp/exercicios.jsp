@@ -25,16 +25,17 @@
                  </div>
 
                  <br>
-                 <a href="home.jsp">Home</a>
-                 <a href="personais.html">Personais</a>
+                <a href="home.jsp">Home</a>
+                               <a href="/findAllPersonal">Personais</a>
 
-                 <a href="/findAllLista">Treinos</a>
+                               <a href="/findAllLista">Treinos</a>
 
-                 <a href="/findAllExercicio">Exercícios</a>
+                               <a href="/findAllExercicio">Exercícios</a>
 
-                 <c:if test="${sessionScope.loggedUsuario != null}">
-                 <a href="/findAllUsuario">Admin</a>
-                  </c:if>
+                                 <c:if test="${sessionScope.loggedUsuario != null}">
+                                              <a href="admin.jsp">Admin</a>
+                                               </c:if>
+
 
              </div>
          </nav>

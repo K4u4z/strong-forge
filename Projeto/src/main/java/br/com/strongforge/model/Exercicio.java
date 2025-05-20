@@ -17,6 +17,13 @@ public class Exercicio {
         this.image = image;
         this.video = video;
     }
+
+    public Exercicio(String id, String nome, String agrupamento) {
+        this.id = id;
+        this.nome = nome;
+        this.agrupamento = agrupamento;
+    }
+
     public Exercicio(String id, String nome){
         this.id = id;
     }
