@@ -82,15 +82,15 @@
 <h2>Telas</h2>
 <h2>Tela de login</h2>
 
-![Login](https://github.com/user-attachments/assets/63f58756-b6c5-4a58-8c62-fdbff4b105b2)
+![Login](https://github.com/K4u4z/strong-forge/blob/main/Telas/Login.png?raw=true)
 
 <h2>Tela de Cadastro</h2>
 
-![Cadastro](https://github.com/user-attachments/assets/0c14f97f-d4b6-402b-97bc-b44e84044e0d)
+![Cadastro](https://github.com/K4u4z/strong-forge/blob/main/Telas/Cadastro.png?raw=true)
 
 <h2>Tela de Home</h2>
 
-![Home](https://github.com/user-attachments/assets/259b0616-7981-4666-b1e5-ae332a845851)
+![Home](https://github.com/K4u4z/strong-forge/blob/main/Telas/Home.png?raw=true)
 
 <h2>Tela de Exercicios</h2>
 
