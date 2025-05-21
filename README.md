@@ -108,9 +108,13 @@
 
 ![Perfil personal](https://github.com/K4u4z/strong-forge/blob/main/Telas/Perfil%20personal.png?raw=true)
 
-<h2>Tela de exercicio</h2>
+<h2>Tela Controle usuario</h2>
 
-![Exercicio](https://github.com/user-attachments/assets/23fd9877-efcd-4268-a895-6678a219f90d)
+![Controle usuario](https://github.com/K4u4z/strong-forge/blob/main/Telas/Controle%20usuario.png?raw=true)
+
+<h2>Tela Administração</h2>
+
+![Administração](https://github.com/K4u4z/strong-forge/blob/main/Telas/Administra%C3%A7%C3%A3o.png?raw=true)
 
 
 
