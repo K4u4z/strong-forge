@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <head>
     <meta charset="UTF-8">
@@ -11,75 +11,72 @@
 
 <body>
     <div class="container">
-       <nav>
-                  <div class="logo">
-                      <img src="img/logo01.png" alt="Logo">
-                      <p>"Transforme seu corpo, fortaleça sua mente."</p>
-                  </div>
-                  <div class="nav-links">
-                      <div class="auth-buttons">
-                          <a href="login.jsp" class="btn-login">Login</a>
-                          <a href="cadastro.jsp" class="btn-cadastro">Cadastro</a>
-                      </div>
+        <nav>
+            <div class="logo">
+                <img src="img/logo01.png" alt="Logo">
+                <p>"Transforme seu corpo, fortaleça sua mente."</p>
+            </div>
+            <div class="nav-links">
+                <div class="auth-buttons">
+                    <a href="login.jsp" class="btn-login">Login</a>
+                    <a href="cadastro.jsp" class="btn-cadastro">Cadastro</a>
+                </div>
 
-                      <br>
-                      <a href="home.jsp">Home</a>
-                                     <a href="/findAllPersonal">Personais</a>
+                <br>
+                <a href="home.jsp">Home</a>
+                <a href="/findAllPersonal">Personais</a>
+                <a href="/findAllLista">Treinos</a>
+                <a href="/findAllExercicio">Exercícios</a>
 
-                                     <a href="/findAllLista">Treinos</a>
-
-                                     <a href="/findAllExercicio">Exercícios</a>
-
-                                       <c:if test="${sessionScope.loggedUsuario != null}">
-                                                    <a href="admin.jsp">Admin</a>
-                                                     </c:if>
-
-                  </div>
-              </nav>
-
-              <section class="exercise-categories">
-                          <h2>Treinos</h2>
-                          <div class="category-buttons">
-                              <button class="category-btn active" data-category="all">Todos</button>
-                              <button class="category-btn" data-category="Segunda">Segunda</button>
-                              <button class="category-btn" data-category="Terça">Terça</button>
-                              <button class="category-btn" data-category="Quarta">Quarta</button>
-                              <button class="category-btn" data-category="Quinta">Quinta</button>
-                              <button class="category-btn" data-category="Sexta">Sexta</button>
-                              <button class="category-btn" data-category="Sabado">Sabado</button>
-                              <button class="category-btn" data-category="Domingo">Domingo</button>
-                          </div>
-                      </section>
-
-                       <div><a href="lista.jsp">Adicionar Lista</a></div>
-                      <section>
-                       <tr>
-
-                           <th>Lista</th>
-                           <th>Data</th>
-                       </tr>
-                       <section>
-                       <section>
-                       <c:forEach var="Lista" items="${listas}">
-                           <tr>
-
-                               <td>${Lista.nome}</td>
-                               <td>${Lista.data}</td>
-                               <td>
-                               <span class="divider">|</span>
-                                 <form action="/detalhesListaById" method="GET">
-                                     <input type="hidden" name="id" value="${Lista.id}">
-                                     <button type="submit" class="action-btn delete-btn">Ver detalhes</button>
-                                 </form>
-                               <br>
-                               <br>
-                <section>
+                <c:if test="${sessionScope.loggedUsuario != null}">
+                    <a href="admin.jsp">Admin</a>
+                </c:if>
+            </div>
+        </nav>
+<main>
+        <section class="exercise-categories">
+            <h2>Treinos</h2>
+            <div class="category-buttons">
+                <button class="category-btn active" data-category="all">Todos</button>
+                <button class="category-btn" data-category="Segunda">Segunda</button>
+                <button class="category-btn" data-category="Terça">Terça</button>
+                <button class="category-btn" data-category="Quarta">Quarta</button>
+                <button class="category-btn" data-category="Quinta">Quinta</button>
+                <button class="category-btn" data-category="Sexta">Sexta</button>
+                <button class="category-btn" data-category="Sabado">Sábado</button>
+                <button class="category-btn" data-category="Domingo">Domingo</button>
+            </div>
+        </section>
+        <br>
 
 
-                       </c:forEach>
+        <div class="lista-container">
+            <a href="lista.jsp" class="add-lista-btn">Adicionar Lista</a>
 
-<br>
+            <div class="lista-header">
+                <div>Lista</div>
+                <div>Data</div>
+                <div>Ações</div>
+            </div>
 
+            <div class="lista-items">
+                <c:forEach var="Lista" items="${listas}">
+                    <div class="lista-item">
+                        <div>${Lista.nome}</div>
+                        <div>${Lista.data}</div>
+                        <div class="lista-actions">
+                            <form action="/detalhesListaById" method="GET">
+                                <input type="hidden" name="id" value="${Lista.id}">
+                                <button type="submit" class="action-btn view-btn">Ver detalhes</button>
+                            </form>
+                        </div>
+                    </div>
+                </c:forEach>
+            </div>
+        </div>
+
+    </div>
+</main>
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -102,9 +99,5 @@
             &copy; 2023 Strong Gym. Todos os direitos reservados.
         </div>
     </footer>
-
-
-
 </body>
-
 </html>

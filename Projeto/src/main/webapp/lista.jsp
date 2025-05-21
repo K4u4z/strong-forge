@@ -41,18 +41,24 @@
 
 
 
-                       <form action="/createLista" method="post">
+                    <form action="/createLista" method="post" class="lista-container">
 
-                           <input type="hidden" name="id" value="${param.id}">
+                        <input type="hidden" name="id" value="${param.id}">
 
-                           <label>Nome da Lista</label>
-                           <input type="text" name="lista-nome" required>
+                        <div class="lista-items">
+                            <div class="lista-item">
+                                <label for="lista-nome">Nome da Lista</label>
+                                <input type="text" name="lista-nome" id="lista-nome" required class="input-field">
+                            </div>
 
-                           <label>Data da Lista</label>
-                           <input type="date" name="data-lista" required>
+                            <div class="lista-item">
+                                <label for="data-lista">Data da Lista</label>
+                                <input type="date" name="data-lista" id="data-lista" required class="input-field">
+                            </div>
+                        </div>
 
-                           <button type="submit">Criar Lista</button>
-                       </form>
+                        <button type="submit" class="add-lista-btn">Criar Lista</button>
+                    </form>
 
 
 

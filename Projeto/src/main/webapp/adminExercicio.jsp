@@ -42,8 +42,9 @@
                   <a href="/logout" class="logout-btn">Logout</a>
               </div>
           </c:if>
+           <a href="/cadExerc.jsp">Adicionar exercicio</a>
 <div class="content-block">
-        <h1 style="color: #343a40; border-bottom: 2px solid #28a745; padding-bottom: 10px;">Gerenciamento de Usuários</h1>
+        <h1 style="color: #343a40; border-bottom: 2px solid #28a745; padding-bottom: 10px;">Gerenciamento de Exercicios</h1>
 
         <table>
             <thead>
@@ -69,6 +70,8 @@
                                 <input type="hidden" id="id" name="id" value="${Exercicio.id}">
                                 <button type="submit" class="action-btn delete-btn">Excluir</button>
                             </form>
+
+
 
                         </td>
                     </tr>
