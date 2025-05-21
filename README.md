@@ -94,19 +94,19 @@
 
 <h2>Tela de Exercicios</h2>
 
-![Exercicios](https://github.com/user-attachments/assets/d480103c-88f3-4177-8d26-34c7798395c6)
+![Exercicios](https://github.com/K4u4z/strong-forge/blob/main/Telas/Exercicios.png?raw=true)
 
 <h2>Tela Cronograma de treinos</h2>
 
-![Cronograma Treino](https://github.com/user-attachments/assets/3dd2fd34-fc00-4d25-904b-8bfb5d9e47c5)
+![Cronograma Treino](https://github.com/K4u4z/strong-forge/blob/main/Telas/Cronograma.png?raw=true)
 
 <h2>Tela de Personais</h2>
 
-![Personal](https://github.com/user-attachments/assets/61d2a05e-c7a2-47a1-b3f9-594234e14039)
+![Personal](https://github.com/K4u4z/strong-forge/blob/main/Telas/Personais.png?raw=true)
 
 <h2>Tela Perfil do Personal</h2>
 
-![Perfil personal](https://github.com/user-attachments/assets/5408f8b6-fc01-4669-bd94-ff62e517c8f3)
+![Perfil personal](https://github.com/K4u4z/strong-forge/blob/main/Telas/Perfil%20personal.png?raw=true)
 
 <h2>Tela de exercicio</h2>
 
