@@ -137,8 +137,13 @@ public class ExercicioDao {
         try (Connection connection = ConnectionPoolConfig.getConnection();
              PreparedStatement ps = connection.prepareStatement(SQL)) {
 
+            // Configurar todos os parâmetros na ordem correta
             ps.setString(1, exercicio.getNome());
-            // ... outros sets
+            ps.setString(2, exercicio.getAgrupamento());
+            ps.setString(3, exercicio.getNivel());
+            ps.setString(4, exercicio.getDescricao());
+            ps.setString(5, exercicio.getImage());
+            ps.setString(6, exercicio.getVideo());
             ps.setString(7, exercicio.getId());
 
             int linhasAfetadas = ps.executeUpdate();
@@ -156,8 +161,6 @@ public class ExercicioDao {
             System.out.println("Erro geral ao atualizar: " + e.getMessage());
             e.printStackTrace();
         }
-
-
     }
 
     public void deleteExercicioById(String exercicioId) {

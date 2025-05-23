@@ -6,12 +6,14 @@ public class Lista {
     private String id;
     private String nome;
     private String data;
+    private String dia;
     private List<Exercicio> exercicios;
 
-    public Lista(String id, String nome, String data) {
+    public Lista(String id, String nome, String data,String dia) {
         this.id = id;
         this.nome = nome;
         this.data = data;
+        this.dia = dia;
     }
     public Lista(String id, String nome) {
         this.id = id;
@@ -37,4 +39,9 @@ public class Lista {
     public String getData() {
         return data;
     }
+
+    public String getDia() {
+        return dia;
+    }
 }
+

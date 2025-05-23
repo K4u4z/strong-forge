@@ -59,45 +59,31 @@ body {
        align-items: center;
    }
 
-   nav .logo {
-       text-align: center;
-       margin-bottom: 30px;
-   }
+  .nav-links {
+      flex-grow: 1;
+  }
 
-   nav .logo img {
-       max-width: 100%;
-       height: auto;
-   }
+  .nav-links a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 15px 25px;
+      transition: all 0.3s ease;
+      border-left: 4px solid transparent;
+  }
 
-   nav .logo p {
-       font-size: 14px;
-       color: var(--info-text);
-       margin-top: 10px;
-   }
+  .nav-links a:hover {
+      background-color: var(--medium-gray);
+      border-left: 4px solid var(--accent-green);
+      color: var(--hover-green);
+  }
 
-   .nav-links {
-       display: flex;
-       flex-direction: column;
-       gap: 12px;
-       width: 100%;
-       align-items: center;
-   }
+  .nav-links a.active {
+      background-color: var(--medium-gray);
+      border-left: 4px solid var(--accent-green);
+      color: var(--accent-green);
+  }
 
-   .nav-links a {
-       color: var(--text-primary);
-       text-decoration: none;
-       font-weight: 500;
-       padding: 10px 20px;
-       border-radius: 8px;
-       transition: background-color 0.3s ease;
-       width: 100%;
-       text-align: center;
-   }
-
-   .nav-links a:hover {
-       background-color: var(--hover-green);
-       color: #000;
-   }
 
    .auth-buttons {
        display: flex;
@@ -267,7 +253,8 @@ body {
     color: var(--accent-green);
 }
 
-/* Estilo do footer */
+* FOOTER fixado ao final da página */
+/* Footer responsivo */
 footer {
     background-color: var(--dark-gray);
     color: white;
@@ -432,9 +419,7 @@ footer {
 
 /* Estilos para o main */
 main {
-    flex-grow: 1;
-    padding: 30px;
-    background-color: var(--light-gray);
+
 }
 
 .featured-trainers, .how-it-works {
@@ -1025,7 +1010,287 @@ main {
         flex: 0 0 250px;
     }
 }
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
 
+  nav {
+      width: 250px;
+      background-color: var(--dark-gray);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 0;
+  }
+
+.main-formulario {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    background-color: var(--light-gray);
+}
+
+.formulario-treino {
+    background-color: var(--dark-gray);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.titulo-formulario {
+    color: var(--accent-green);
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--accent-green);
+    padding-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.grupo-campo {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo-campo label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.grupo-campo input,
+.grupo-campo select {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    background-color: var(--light-gray);
+    color: white;
+}
+
+.grupo-botao {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.grupo-botao button {
+    background-color: var(--accent-green);
+    color: #000;
+    font-weight: bold;
+    padding: 12px 30px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.grupo-botao button:hover {
+    background-color: var(--hover-green);
+}
+.main-checklist {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    background-color: var(--light-gray);
+}
+
+.formulario-exercicios {
+    background-color: var(--dark-gray);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 700px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.titulo-formulario {
+    color: var(--accent-green);
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--accent-green);
+    padding-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.exercises-checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.exercise-checklist-item {
+    display: flex;
+    align-items: center;
+    background-color: var(--light-gray);
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.exercise-checklist-item input {
+    margin-right: 15px;
+    transform: scale(1.2);
+    accent-color: var(--accent-green);
+}
+
+.exercise-checklist-name {
+    color: white;
+}
+
+.exercise-checklist-item:hover {
+    background-color: var(--medium-gray);
+}
+
+.grupo-botao {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.grupo-botao button {
+    background-color: var(--accent-green);
+    color: #000;
+    font-weight: bold;
+    padding: 12px 30px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.grupo-botao button:hover {
+    background-color: var(--hover-green);
+}
+
+/* Ajustes para os filtros de treinos */
+.treinos-filter-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+}
+.user-menu {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.user-menu img {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.user-menu-name {
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+.user-menu {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+}
+
+.user-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* Pode adicionar sombra ou borda para destacar */
+    border: 2px solid #555;
+}
+
+/* Popup estilizado */
+.user-dropdown {
+    position: absolute;
+    top: 50px; /* ajustado para ficar abaixo do ícone */
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 10px 15px;
+    border-radius: 6px;
+    z-index: 1000;
+    min-width: 120px;
+}
+
+/* Botão logout estilizado */
+.btn-logout {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.btn-logout:hover {
+    background-color: #c0392b;
+}
+
+.user-dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1001;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.user-menu:hover .user-dropdown {
+    display: block;
+}
+
+/* Ajustes para os itens da lista de treinos */
+.treino-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    text-align: center;
+}
+
+.treino-item div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.treino-item div::before {
+    content: attr(data-label);
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+@media (min-width: 992px) {
+    .treino-item {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        text-align: left;
+    }
+
+    .treino-item div::before {
+        display: none;
+    }
+
+    .treino-item div {
+        justify-content: flex-start;
+    }
+}
 @media (max-width: 768px) {
     .search-section h1, .featured-trainers h2, .how-it-works h2 {
         font-size: 1.8rem;
@@ -1592,4 +1857,356 @@ main h3 {
         #okButton:hover {
             background-color: #45a049;
         }
+        /* Container da Lista */
+        .lista-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 2rem;
+        }
 
+        .add-lista-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .add-lista-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Cabeçalho da Lista */
+        .lista-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            padding: 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        /* Itens da Lista */
+        .lista-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .lista-item {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            align-items: center;
+            padding: 1rem;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border: 1px solid #eee;
+        }
+
+        .lista-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .lista-item[data-dia] {
+            display: none;
+        }
+
+        .lista-item.visible {
+            display: grid !important;
+        }
+
+        .lista-actions form {
+            display: flex;
+            justify-content: center;
+        }
+
+        .action-btn {
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .action-btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            main {
+                margin-left: 0;
+                width: 100%;
+                padding: 1rem;
+            }
+
+            .lista-header, .lista-item {
+                grid-template-columns: 2fr 1fr 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .lista-header, .lista-item {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+                text-align: center;
+            }
+
+            .lista-header div {
+                display: none;
+            }
+
+            .lista-header::before {
+                content: "Lista de Treinos";
+                font-weight: bold;
+                grid-column: 1 / -1;
+            }
+
+            .lista-item div {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .lista-item div::before {
+                content: attr(data-label);
+                font-weight: bold;
+                margin-right: 1rem;
+            }
+
+            .lista-item div:last-child {
+                justify-content: center;
+            }
+        }
+/* Estilos Específicos para a Página de Treinos */
+.treinos-main {
+    flex: 1;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    margin-left: 250px;
+    width: calc(100% - 250px);
+}
+
+/* Filtros */
+.treinos-filters {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+}
+
+.treinos-filters h2 {
+    color: #2CA96A;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    position: relative;
+    display: inline-block;
+}
+
+.treinos-filters h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #2CA96A;
+}
+
+.treinos-filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+.treinos-filter-btn {
+    padding: 0.6rem 1.2rem;
+    background-color: white;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.treinos-filter-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.treinos-filter-btn.active {
+    background-color: #2CA96A;
+    color: white;
+    border-color: #2CA96A;
+}
+
+/* Container de Treinos */
+.treinos-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 10px; /* Espaço antes do footer */
+}
+
+.add-treino-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #2CA96A;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.add-treino-btn:hover {
+    background-color: #248c57;
+    transform: translateY(-2px);
+}
+
+/* Cabeçalho da Lista */
+.treinos-list-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    padding: 1rem;
+    background-color: #2CA96A;
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* Itens da Lista */
+.treinos-list-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.treino-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    align-items: center;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.treino-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-color: #2CA96A;
+}
+
+.treino-item[data-dia] {
+    display: none;
+}
+
+.treino-item.visible {
+    display: grid !important;
+}
+
+.treino-actions form {
+    display: flex;
+    justify-content: center;
+}
+
+.treino-action-btn {
+    padding: 0.5rem 1rem;
+    background-color: #2CA96A;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.treino-action-btn:hover {
+    background-color: #248c57;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .treinos-main {
+        margin-left: 0;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .treinos-list-header, .treino-item {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .treinos-list-header, .treino-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .treinos-list-header div {
+        display: none;
+    }
+
+    .treinos-list-header::before {
+        content: "Lista de Treinos";
+        font-weight: bold;
+        grid-column: 1 / -1;
+    }
+
+    .treino-item div {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .treino-item div::before {
+        content: attr(data-label);
+        font-weight: bold;
+        margin-right: 1rem;
+    }
+
+    .treino-item div:last-child {
+        justify-content: center;
+    }
+}

@@ -9,33 +9,33 @@
 </head>
 <body>
 <div class="container">
-        <nav>
-                   <div class="logo">
-                       <img src="img/logo01.png" alt="Logo">
-                       <p>"Transforme seu corpo, fortaleça sua mente."</p>
-                   </div>
-                   <div class="nav-links">
-                       <div class="auth-buttons">
-                           <a href="login.jsp" class="btn-login">Login</a>
-                           <a href="cadastro.jsp" class="btn-cadastro">Cadastro</a>
-                       </div>
+            <nav>
+                    <div class="logo">
+                        <img src="img/logo01.png" alt="Logo">
+                        <p>"Transforme seu corpo, fortaleça sua mente."</p>
+                    </div>
+                    <div class="nav-links">
+                        <div class="auth-buttons">
+                            <a href="login.jsp" class="btn-login">Login</a>
+                            <a href="cadastro.jsp" class="btn-cadastro">Cadastro</a>
+                        </div>
 
-                       <br>
-                      <a href="home.jsp">Home</a>
-                                     <a href="/findAllPersonal">Personais</a>
+                        <br>
+                        <a href="home.jsp">Home</a>
+                        <a href="/findAllPersonal">Personais</a>
 
-                                     <a href="/findAllLista">Treinos</a>
+                        <a href="/findAllLista">Treinos</a>
 
-                                     <a href="/findAllExercicio">Exercícios</a>
+                        <a href="/findAllExercicio">Exercícios</a>
 
-                                       <c:if test="${sessionScope.loggedUsuario != null}">
-                                                    <a href="admin.jsp">Admin</a>
-                                                     </c:if>
+                        <c:if test="${sessionScope.loggedUsuario != null}">
+                                     <a href="admin.jsp">Admin</a>
+                                      </c:if>
 
-
-                   </div>
-               </nav>
+                    </div>
+                </nav>
   <div>
+  <img src="img/icon.png" alt="usuario">
   <c:if test="${sessionScope.loggedUsuario != null}">
               <div class="user-info">
                   <span>Bem-vindo, <strong>${sessionScope.loggedUser}</strong></span>
@@ -63,8 +63,11 @@
                         <td>${Exercicio.agrupamento}</td>
                         <td>
                         <span class="divider">|</span>
-                        <a href="cadExerc.jsp?id=${Exercicio.id}&nome=${Exercicio.nome}" class="action-btn update-btn">Editar</a>
-                        <br>
+
+                       <form action="/editarExercicio" method="GET">
+                           <input type="hidden" name="id" value="${Exercicio.id}">
+                           <button type="submit">Editar</button>
+                       </form>
                         <br>
                             <form action="/delete-exercicio" method="post" style="display: inline;">
                                 <input type="hidden" id="id" name="id" value="${Exercicio.id}">

@@ -17,101 +17,63 @@ import java.util.*;
 
 import static org.apache.commons.fileupload.servlet.ServletFileUpload.isMultipartContent;
 
-@WebServlet("/createExercicio")
-public class CreateExercicioServlet extends HttpServlet {
-
+@WebServlet({"/updateExercicio"})
+public class UpdateExerciciosServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
 
         Map<String, String> parameters = uploadImage(req);
-
         String exercicioId = parameters.get("exercicio-id");
 
-
-        if(exercicioId == null || exercicioId.isBlank()) {
-            Random random = new Random();
-            exercicioId = String.valueOf(random.nextInt(Integer.MAX_VALUE));
+        if (exercicioId == null || exercicioId.isBlank()) {
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "ID do exercício é obrigatório para atualização");
+            return;
         }
-
-        String exercicioName = parameters.get("exercicio-name");
-        String exercicioAgrup = parameters.get("exercicio-agrupamento");
-        String exercicioNivel = parameters.get("exercicio-nivel");
-        String exercicioDesc = parameters.get("exercicio-descricao");
-        String exercicioImage = parameters.get("image");
-        String exercicioVideo = parameters.get("exercicio-video");
 
         Exercicio exercicio = new Exercicio(
                 exercicioId,
-                exercicioName,
-                exercicioAgrup,
-                exercicioNivel,
-                exercicioDesc,
-                exercicioImage,
-                exercicioVideo
+                parameters.get("exercicio-name"),
+                parameters.get("exercicio-agrupamento"),
+                parameters.get("exercicio-nivel"),
+                parameters.get("exercicio-descricao"),
+                parameters.get("image"),
+                parameters.get("exercicio-video")
         );
 
         ExercicioDao exercicioDao = new ExercicioDao();
-
-
-            exercicioDao.createExercicio(exercicio);
-
+        exercicioDao.updateExercicio(exercicio);
+        System.out.println("Atualizando exercício existente com ID: " + exercicioId);
 
         resp.sendRedirect("/findAllExercicio");
     }
 
 
-
-
-
-
-
-
-
-
     private Map<String, String> uploadImage(HttpServletRequest httpServletRequest) {
-
         Map<String, String> requestParameters = new HashMap<>();
 
         if (isMultipartContent(httpServletRequest)) {
-
             try {
-
                 DiskFileItemFactory diskFileItemFactory = new DiskFileItemFactory();
-
                 List<FileItem> fileItems = new ServletFileUpload(diskFileItemFactory).parseRequest(httpServletRequest);
 
                 for (FileItem fileItem : fileItems) {
-
                     checkFieldType(fileItem, requestParameters);
-
                 }
-
             } catch (Exception ex) {
-
-                requestParameters.put("img", "img/default-exercicio.jpg");
-
+                requestParameters.put("image", "img/default-exercicio.jpg");
             }
-
         }
-
         return requestParameters;
-
     }
 
     private void checkFieldType(FileItem item, Map requestParameters) throws Exception {
-
         if (item.isFormField()) {
-
             requestParameters.put(item.getFieldName(), item.getString());
-
         } else {
-
             String fileName = processUploadedFile(item);
             requestParameters.put("image", "img/".concat(fileName));
-
         }
-
     }
 
     private String processUploadedFile(FileItem fileItem) throws Exception {
@@ -122,4 +84,3 @@ public class CreateExercicioServlet extends HttpServlet {
         return fileName;
     }
 }
-

@@ -16,7 +16,7 @@ import java.util.List;
 public class ListaDao {
 
     public void createLista(Lista list) {
-        String SQL = "INSERT INTO LISTA (ID,NOME,DATA) VALUES (?,?,?)";
+        String SQL = "INSERT INTO LISTA (ID,NOME,DATA,DIA) VALUES (?,?,?,?)";
 
         try {
             Connection connection = ConnectionPoolConfig.getConnection();
@@ -25,6 +25,7 @@ public class ListaDao {
             preparedStatement.setString(1,list.getId());
             preparedStatement.setString(2, list.getNome());
             preparedStatement.setString(3, list.getData());
+            preparedStatement.setString(4,list.getDia());
             preparedStatement.execute();
 
             System.out.println("Parâmetro inserido com sucesso");
@@ -58,9 +59,9 @@ public class ListaDao {
                 String listaId = resultSet.getString("id");
                 String listaName = resultSet.getString("nome");
                 String listaEmail = resultSet.getString("data");
+                String listaDia = resultSet.getString("dia");
 
-
-                Lista lista = new Lista(listaId, listaName, listaEmail);
+                Lista lista = new Lista(listaId, listaName, listaEmail,listaDia);
 
                 list.add(lista);
 
@@ -112,6 +113,7 @@ public class ListaDao {
                 "    L.id AS lista_id,\n" +
                 "    L.nome AS nome_lista,\n" +
                 "    L.data, \n" +
+                "L.dia,\n "+
                 "    E.id AS exercicio_id,\n" +
                 "    E.nome AS nome_exercicio,\n" +
                 "    E.agrupamento,\n" +
@@ -140,7 +142,8 @@ public class ListaDao {
                     lista = new Lista(
                             resultSet.getString("lista_id"),
                             resultSet.getString("nome_lista"),
-                            resultSet.getString("data")  // Adicionando a data
+                            resultSet.getString("data"),
+                            resultSet.getString("dia")
                     );
                 }
 

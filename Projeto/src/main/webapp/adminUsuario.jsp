@@ -9,32 +9,31 @@
 </head>
 <body>
 <div class="container">
-        <nav>
-                   <div class="logo">
-                       <img src="img/logo01.png" alt="Logo">
-                       <p>"Transforme seu corpo, fortaleça sua mente."</p>
-                   </div>
-                   <div class="nav-links">
-                       <div class="auth-buttons">
-                           <a href="login.jsp" class="btn-login">Login</a>
-                           <a href="cadastro.jsp" class="btn-cadastro">Cadastro</a>
-                       </div>
+         <nav>
+                 <div class="logo">
+                     <img src="img/logo01.png" alt="Logo">
+                     <p>"Transforme seu corpo, fortaleça sua mente."</p>
+                 </div>
+                 <div class="nav-links">
+                     <div class="auth-buttons">
+                         <a href="login.jsp" class="btn-login">Login</a>
+                         <a href="cadastro.jsp" class="btn-cadastro">Cadastro</a>
+                     </div>
 
-                       <br>
-                      <a href="home.jsp">Home</a>
-                                     <a href="/findAllPersonal">Personais</a>
-                     
-                                     <a href="/findAllLista">Treinos</a>
-                     
-                                     <a href="/findAllExercicio">Exercícios</a>
-                     
-                                       <c:if test="${sessionScope.loggedUsuario != null}">
-                                                    <a href="admin.jsp">Admin</a>
-                                                     </c:if>
+                     <br>
+                     <a href="home.jsp">Home</a>
+                     <a href="/findAllPersonal">Personais</a>
 
+                     <a href="/findAllLista">Treinos</a>
 
-                   </div>
-               </nav>
+                     <a href="/findAllExercicio">Exercícios</a>
+
+                     <c:if test="${sessionScope.loggedUsuario != null}">
+                                  <a href="admin.jsp">Admin</a>
+                                   </c:if>
+
+                 </div>
+             </nav>
   <div>
   <c:if test="${sessionScope.loggedUsuario != null}">
               <div class="user-info">
@@ -42,7 +41,7 @@
                   <a href="/logout" class="logout-btn">Logout</a>
               </div>
           </c:if>
-           <a href="/cadExerc">Adicionar usuario</a>
+           <a href="/cadastro.jsp">Adicionar usuario</a>
 <div class="content-block">
         <h1 style="color: #343a40; border-bottom: 2px solid #28a745; padding-bottom: 10px;">Gerenciamento de Usuários</h1>
 

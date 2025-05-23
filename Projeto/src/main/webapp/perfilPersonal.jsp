@@ -11,25 +11,31 @@
 
 <body>
     <div class="container">
-        <nav>
-            <div class="logo">
-                <img src="img/logo01.png" alt="Logo">
-                <p>"Transforme seu corpo, fortaleça sua mente."</p>
-            </div>
-            <div class="nav-links">
-              <a href="home.jsp">Home</a>
-                             <a href="/findAllPersonal">Personais</a>
+            <nav>
+                    <div class="logo">
+                        <img src="img/logo01.png" alt="Logo">
+                        <p>"Transforme seu corpo, fortaleça sua mente."</p>
+                    </div>
+                    <div class="nav-links">
+                        <div class="auth-buttons">
+                            <a href="login.jsp" class="btn-login">Login</a>
+                            <a href="cadastro.jsp" class="btn-cadastro">Cadastro</a>
+                        </div>
 
-                             <a href="/findAllLista">Treinos</a>
+                        <br>
+                        <a href="home.jsp">Home</a>
+                        <a href="/findAllPersonal">Personais</a>
 
-                             <a href="/findAllExercicio">Exercícios</a>
+                        <a href="/findAllLista">Treinos</a>
 
-                               <c:if test="${sessionScope.loggedUsuario != null}">
-                                            <a href="admin.jsp">Admin</a>
-                                             </c:if>
+                        <a href="/findAllExercicio">Exercícios</a>
 
-            </div>
-        </nav>
+                        <c:if test="${sessionScope.loggedUsuario != null}">
+                                     <a href="admin.jsp">Admin</a>
+                                      </c:if>
+
+                    </div>
+                </nav>
 
         <main>
             <section class="featured-trainers">
@@ -40,16 +46,13 @@
                     </div>
                     <div class="trainer-info">
                         <h3>${personais.nome}</h3>
-                        <p class="age-location">26 anos | São Paulo</p>
-                        <p class="education">Formação: Senac</p>
+
+
 
                         <div class="specialties">
                             <h4>Especialidades:</h4>
                             <ul>
-                                <li>Treinamento de emagrecimento/definição</li>
-                                <li>Hipertrofia para mulheres e homens</li>
-                                <li>Treinamento cardiovascular</li>
-                                <li>Condicionamento físico</li>
+                                "${personais.especialidade}"
                             </ul>
                         </div>
 
@@ -57,6 +60,11 @@
                             <h4>Descrição:</h4>
 
                         </div>
+
+                        <div class="specialties">
+                                                    <h4>Contato:</h4>
+"${personais.contato}"
+                                                </div>
 
                         <div class="philosophy">
                             <p>${personais.nome}</p>
@@ -98,28 +106,7 @@
 
     </div>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Sobre Nós</h4>
-                <p>Strong Gym é dedicada a fornecer informações de qualidade sobre exercícios e treinamento físico. Nosso objetivo é ajudar você a alcançar seus objetivos de forma segura e eficiente.</p>
-            </div>
-            <div class="footer-section">
-                <h4>Contato</h4>
-                <p>Email: contato@stronggym.com</p>
-                <p>Telefone: (11) 98765-4321</p>
-            </div>
-            <div class="footer-section">
-                <h4>Redes Sociais</h4>
-                <a href="#">Instagram</a>
-                <a href="#">Facebook</a>
-                <a href="#">YouTube</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            &copy; 2023 Strong Gym. Todos os direitos reservados.
-        </div>
-    </footer>
+
 
 
         </div>
