@@ -11,7 +11,7 @@
     <title>Cadastro</title>
 </head>
 <body>
-    <div id="container" class="container">
+    <div id="container2" class="container2">
         <div id="img-container">
             <img src="img/logo_strongforge.jpg" alt="imagem_strongforge" id="img_cad">
         </div>
