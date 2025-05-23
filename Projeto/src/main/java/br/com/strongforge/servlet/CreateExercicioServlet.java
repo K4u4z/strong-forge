@@ -13,10 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static org.apache.commons.fileupload.servlet.ServletFileUpload.isMultipartContent;
 
@@ -29,8 +26,11 @@ public class CreateExercicioServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
 
         Map<String, String> parameters = uploadImage(req);
+        Random random = new Random();
+        int exercId = random.nextInt(Integer.MAX_VALUE);
+        String exercicioId = String.valueOf(exercId);
 
-        String exercicioId = parameters.get("id");
+
         String exercicioName = parameters.get("exercicio-name");
         String exercicioAgrup = parameters.get("exercicio-agrupamento");
         String exercicioNivel = parameters.get("exercicio-nivel");
@@ -39,7 +39,7 @@ public class CreateExercicioServlet extends HttpServlet {
         String exercicioVideo = parameters.get("exercicio-video");
 
 
-        Exercicio exercicio = new Exercicio("0", exercicioName, exercicioAgrup, exercicioNivel, exercicioDesc, exercicioImage, exercicioVideo);
+        Exercicio exercicio = new Exercicio(exercicioId, exercicioName, exercicioAgrup, exercicioNivel, exercicioDesc, exercicioImage, exercicioVideo);
 
         new ExercicioDao().createExercicio(exercicio);
 

@@ -132,7 +132,7 @@ public class ExercicioDao {
     }
 
     public void updateExercicio(Exercicio exercicio) {
-        String SQL = "UPDATE EXERCICIO SET NOME = ? WHERE ID = ?";
+        String SQL = "UPDATE EXERCICIO SET NOME = ?, AGRUPAMENTO = ?, NIVEL = ?, DESCRICAO = ?, IMAGE = ?, VIDEO = ?  WHERE ID = ?";
 
         try {
 
@@ -141,7 +141,12 @@ public class ExercicioDao {
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
             preparedStatement.setString(1, exercicio.getNome());
-            preparedStatement.setString(2, exercicio.getId());
+            preparedStatement.setString(2, exercicio.getAgrupamento());
+            preparedStatement.setString(3, exercicio.getNivel());
+            preparedStatement.setString(4, exercicio.getDescricao());
+            preparedStatement.setString(5, exercicio.getImage());
+            preparedStatement.setString(6, exercicio.getVideo());
+            preparedStatement.setString(7, exercicio.getId());
             preparedStatement.execute();
 
             System.out.println("success em atualizar o exercicio");
