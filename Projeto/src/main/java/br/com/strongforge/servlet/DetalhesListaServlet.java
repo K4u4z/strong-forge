@@ -18,14 +18,14 @@ public class DetalhesListaServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String listaId = req.getParameter("id");
         if (listaId == null || listaId.isEmpty()) {
-            resp.sendRedirect("listas.jsp");
+            resp.sendRedirect("treino.jsp");
             return;
         }
 
         Lista lista = new ListaDao().detalhesListaById(listaId);
 
         if (lista == null) {
-            resp.sendRedirect("listas.jsp");
+            resp.sendRedirect("treino.jsp");
             return;
         }
 

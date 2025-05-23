@@ -32,9 +32,9 @@ public class CreateListaServlet  extends HttpServlet{
 
         String listaName = req.getParameter("lista-nome");
         String listaData = req.getParameter("data-lista");
-
+        String listaDia = req.getParameter("dia-lista");
         // Cria a lista com o ID (novo ou existente)
-        Lista lista = new Lista(listaId, listaName, listaData);
+        Lista lista = new Lista(listaId, listaName, listaData,listaDia);
 
         // Salva no banco
         ListaDao listaDao = new ListaDao();

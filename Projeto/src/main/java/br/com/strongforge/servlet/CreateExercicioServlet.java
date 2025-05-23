@@ -13,10 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static org.apache.commons.fileupload.servlet.ServletFileUpload.isMultipartContent;
 
@@ -24,13 +21,19 @@ import static org.apache.commons.fileupload.servlet.ServletFileUpload.isMultipar
 public class CreateExercicioServlet extends HttpServlet {
 
     @Override
-
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
 
         Map<String, String> parameters = uploadImage(req);
 
-        String exercicioId = parameters.get("id");
+        String exercicioId = parameters.get("exercicio-id");
+
+
+        if(exercicioId == null || exercicioId.isBlank()) {
+            Random random = new Random();
+            exercicioId = String.valueOf(random.nextInt(Integer.MAX_VALUE));
+        }
+
         String exercicioName = parameters.get("exercicio-name");
         String exercicioAgrup = parameters.get("exercicio-agrupamento");
         String exercicioNivel = parameters.get("exercicio-nivel");
@@ -38,15 +41,31 @@ public class CreateExercicioServlet extends HttpServlet {
         String exercicioImage = parameters.get("image");
         String exercicioVideo = parameters.get("exercicio-video");
 
+        Exercicio exercicio = new Exercicio(
+                exercicioId,
+                exercicioName,
+                exercicioAgrup,
+                exercicioNivel,
+                exercicioDesc,
+                exercicioImage,
+                exercicioVideo
+        );
 
-        Exercicio exercicio = new Exercicio("0", exercicioName, exercicioAgrup, exercicioNivel, exercicioDesc, exercicioImage, exercicioVideo);
+        ExercicioDao exercicioDao = new ExercicioDao();
 
-        new ExercicioDao().createExercicio(exercicio);
 
+            exercicioDao.createExercicio(exercicio);
 
 
         resp.sendRedirect("/findAllExercicio");
     }
+
+
+
+
+
+
+
 
 
 

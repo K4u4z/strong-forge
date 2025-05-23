@@ -19,7 +19,7 @@ public class UsuarioDao {
 
         try {
             connection = ConnectionPoolConfig.getConnection();
-            connection.setAutoCommit(false); // Inicia transação
+            connection.setAutoCommit(false);
 
 
             String usuarioSQL = "INSERT INTO USUARIO (NOME, EMAIL, SENHA, TIPO) VALUES (?, ?, ?, ?)";
@@ -36,7 +36,6 @@ public class UsuarioDao {
                 throw new SQLException("Falha ao criar usuário, nenhuma linha afetada.");
             }
 
-            // 2. Se for PERSONAL, inserir na tabela PERSONAL
             if ("PERSONAL".equalsIgnoreCase(user.getTipoUsuario())) {
                 ResultSet generatedKeys = usuarioStmt.getGeneratedKeys();
 
@@ -48,7 +47,7 @@ public class UsuarioDao {
 
                     personalStmt.setInt(1, userId);
                     personalStmt.setString(2, user.getContato());
-                    personalStmt.setString(3, user.getEspecialidade()); // Corrigida a ordem
+                    personalStmt.setString(3, user.getEspecialidade());
                     personalStmt.setString(4, user.getDescricao());
                     personalStmt.setString(5,user.getImage());
 
@@ -60,7 +59,7 @@ public class UsuarioDao {
             System.out.println("Usuário criado com sucesso");
 
         } catch (Exception e) {
-            // Reverte a transação em caso de erro
+
             if (connection != null) {
                 try {
                     connection.rollback();
@@ -71,7 +70,7 @@ public class UsuarioDao {
             System.out.println("Erro ao criar usuário: " + e.getMessage());
             throw new RuntimeException("Erro ao criar usuário", e);
         } finally {
-            // Fecha recursos
+
             try {
                 if (personalStmt != null) personalStmt.close();
                 if (usuarioStmt != null) usuarioStmt.close();
@@ -148,7 +147,7 @@ public class UsuarioDao {
                         resultSet.getString("senha"),
                         resultSet.getString("tipo"),
                         resultSet.getString("contato"),
-                        resultSet.getString("especialidade"), // Corrigido o nome do campo
+                        resultSet.getString("especialidade"),
                         resultSet.getString("descricao"),
                         resultSet.getString("image")
                 );
@@ -216,7 +215,7 @@ public class UsuarioDao {
     }
 
     public void updateUsuario(Usuario usuario){
-        String SQL = "UPDATE USUARIO SET NOME = ? WHERE ID = ?";
+        String SQL = "UPDATE USUARIO SET NOME = ?, EMAIL = ?, SENHA = ?, TIPO = ? WHERE ID = ?";
 
         try {
 
@@ -225,7 +224,10 @@ public class UsuarioDao {
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
             preparedStatement.setString(1, usuario.getNome());
-            preparedStatement.setString(2, usuario.getId());
+            preparedStatement.setString(2, usuario.getEmail());
+            preparedStatement.setString(3, usuario.getSenha());
+            preparedStatement.setString(4, usuario.getTipoUsuario());
+            preparedStatement.setString(5, usuario.getId());
             preparedStatement.execute();
 
             System.out.println("success em atualizar o usuario");
@@ -302,4 +304,6 @@ public class UsuarioDao {
     }
 
 
+
 }
+

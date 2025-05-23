@@ -36,6 +36,17 @@
 
             </div>
         </nav>
+<c:if test="${not empty sessionScope.loggedUsuario}">
+    <div class="user-menu" id="userMenu">
+        <img src="img/icon.png" alt="icone" class="user-icon" title="Usuário">
+
+        <div class="user-dropdown" id="userDropdown" style="display:none;">
+            <form action="logout" method="post">
+                <button type="submit" class="btn-logout">Deslogar</button>
+            </form>
+        </div>
+    </div>
+</c:if>
 
         <main>
             <section class="welcome-section">
@@ -99,29 +110,27 @@
             </section>
         </main>
     </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const userMenu = document.getElementById('userMenu');
+        const userDropdown = document.getElementById('userDropdown');
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Sobre Nós</h4>
-                <p>Strong Forge é dedicada a fornecer informações de qualidade sobre exercícios e treinamento físico. Nosso objetivo é ajudar você a alcançar seus objetivos de forma segura e eficiente.</p>
-            </div>
-            <div class="footer-section">
-                <h4>Contato</h4>
-                <p>Email: contato@stronggym.com</p>
-                <p>Telefone: (11) 98765-4321</p>
-            </div>
-            <div class="footer-section">
-                <h4>Redes Sociais</h4>
-                <a href="#">Instagram</a>
-                <a href="#">Facebook</a>
-                <a href="#">YouTube</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            &copy; 2025 Strong Gym. Todos os direitos reservados.
-        </div>
-    </footer>
+        userMenu.addEventListener('click', function(event) {
+            event.stopPropagation();
+            if (userDropdown.style.display === 'none' || userDropdown.style.display === '') {
+                userDropdown.style.display = 'block';
+            } else {
+                userDropdown.style.display = 'none';
+            }
+        });
+
+        document.addEventListener('click', function() {
+            userDropdown.style.display = 'none';
+        });
+    });
+</script>
+
+
     
 </body>
 </html>
