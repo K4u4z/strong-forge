@@ -63,7 +63,7 @@
 
                                 </div>
                             </div>
-                            <br>
+
                         </c:forEach>
                     </div>
                 </section>
