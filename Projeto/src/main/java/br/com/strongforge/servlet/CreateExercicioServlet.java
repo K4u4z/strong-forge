@@ -54,12 +54,11 @@ public class CreateExercicioServlet extends HttpServlet {
 
         ExercicioDao exercicioDao = new ExercicioDao();
 
-        if (exercicioId == null || exercicioId.isBlank()) {
+
             exercicioDao.createExercicio(exercicio);
-        } else {
-            exercicioDao.updateExercicio(exercicio);
-            System.out.println(exercicioId);
-        }
+
+
+
 
         resp.sendRedirect("/findAllExercicio");
     }
