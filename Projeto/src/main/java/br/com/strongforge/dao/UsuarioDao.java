@@ -59,6 +59,7 @@ public class UsuarioDao {
             System.out.println("Usuário criado com sucesso");
 
         } catch (Exception e) {
+
             if (connection != null) {
                 try {
                     connection.rollback();
@@ -69,6 +70,7 @@ public class UsuarioDao {
             System.out.println("Erro ao criar usuário: " + e.getMessage());
             throw new RuntimeException("Erro ao criar usuário", e);
         } finally {
+
             try {
                 if (personalStmt != null) personalStmt.close();
                 if (usuarioStmt != null) usuarioStmt.close();
