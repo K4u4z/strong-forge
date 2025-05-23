@@ -132,32 +132,29 @@ public class ExercicioDao {
     }
 
     public void updateExercicio(Exercicio exercicio) {
-        String SQL = "UPDATE EXERCICIO SET NOME = ?, AGRUPAMENTO = ?, NIVEL = ?, DESCRICAO = ?, IMAGE = ?, VIDEO = ?  WHERE ID = ?";
+        String SQL = "UPDATE EXERCICIO SET NOME = ?, AGRUPAMENTO = ?, NIVEL = ?, DESCRICAO = ?, IMAGE = ?, VIDEO = ? WHERE ID = ?";
 
-        try {
+        try (Connection connection = ConnectionPoolConfig.getConnection();
+             PreparedStatement ps = connection.prepareStatement(SQL)) {
 
-            Connection connection = ConnectionPoolConfig.getConnection();
+            ps.setString(1, exercicio.getNome());
+            // ... outros sets
+            ps.setString(7, exercicio.getId());
 
-            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            int linhasAfetadas = ps.executeUpdate();
 
-            preparedStatement.setString(1, exercicio.getNome());
-            preparedStatement.setString(2, exercicio.getAgrupamento());
-            preparedStatement.setString(3, exercicio.getNivel());
-            preparedStatement.setString(4, exercicio.getDescricao());
-            preparedStatement.setString(5, exercicio.getImage());
-            preparedStatement.setString(6, exercicio.getVideo());
-            preparedStatement.setString(7, exercicio.getId());
-            preparedStatement.execute();
+            if(linhasAfetadas == 0) {
+                System.out.println("Nenhum registro afetado - exercício com ID " + exercicio.getId() + " não encontrado");
+            } else {
+                System.out.println("Exercício atualizado com sucesso. ID: " + exercicio.getId());
+            }
 
-            System.out.println("success em atualizar o exercicio");
-
-            connection.close();
-
+        } catch (SQLException e) {
+            System.out.println("Erro SQL ao atualizar: " + e.getMessage());
+            e.printStackTrace();
         } catch (Exception e) {
-
-            System.out.println("falha na conexão com o banco");
-            System.out.println("Error: " + e.getMessage());
-
+            System.out.println("Erro geral ao atualizar: " + e.getMessage());
+            e.printStackTrace();
         }
 
 
