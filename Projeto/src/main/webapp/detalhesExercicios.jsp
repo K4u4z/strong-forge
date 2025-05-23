@@ -12,16 +12,16 @@
 
 <body>
     <div class="container">
-       <nav>
-                  <div class="logo">
-                      <img src="img/logo01.png" alt="Logo">
-                      <p>"Transforme seu corpo, fortaleça sua mente."</p>
-                  </div>
-                  <div class="nav-links">
-                      <div class="auth-buttons">
-                          <a href="login.jsp" class="btn-login">Login</a>
-                          <a href="cadastro.jsp" class="btn-cadastro">Cadastro</a>
-                      </div>
+        <nav>
+            <div class="logo">
+                <img src="img/logo01.png" alt="Logo">
+                <p>"Transforme seu corpo, fortaleça sua mente."</p>
+            </div>
+            <div class="nav-links">
+                <div class="auth-buttons">
+                    <a href="login.jsp" class="btn-login">Login</a>
+                    <a href="cadastro.jsp" class="btn-cadastro">Cadastro</a>
+                </div>
 
                 <a href="home.jsp">Home</a>
                 <a href="/findAllPersonal">Personais</a>
