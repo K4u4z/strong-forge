@@ -19,6 +19,24 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
+#container2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 80%;
+    max-width: 900px;
+    padding: 40px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+
+    /* Centraliza horizontal e verticalmente sem afetar o body */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 .container {
     display: flex;
