@@ -62,7 +62,14 @@
                             <p>${personais.nome}</p>
                         </div>
                         <button class="contact-btn">Entrar em Contato</button>
-
+                         <div id="contactModal" class="modal">
+                                    <div class="modal-content">
+                                        <span class="close-btn">&times;</span>
+                                        <h3>Solicitação enviada!</h3>
+                                        <p>Entraremos em contato com <strong>${personais.nome}</strong> solicitando retorno para você.</p>
+                                        <p>Obrigado por usar o Strong Forge!</p>
+                                        <button id="okButton">OK</button>
+                                    </div>
                     </div>
                 </div>
             </section>
@@ -114,6 +121,39 @@
         </div>
     </footer>
 
+
+        </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const contactBtn = document.querySelector(".contact-btn");
+        const modal = document.getElementById("contactModal");
+        const closeBtn = document.querySelector(".close-btn");
+        const okButton = document.getElementById("okButton");
+
+        contactBtn.addEventListener("click", function () {
+            modal.style.display = "block";
+
+            // Simula envio de mensagem (poderia ser um POST AJAX aqui)
+            console.log("Mensagem enviada ao personal trainer solicitando contato.");
+        });
+
+        closeBtn.addEventListener("click", function () {
+            modal.style.display = "none";
+        });
+
+        okButton.addEventListener("click", function () {
+            modal.style.display = "none";
+        });
+
+        // Fecha ao clicar fora do modal
+        window.addEventListener("click", function (e) {
+            if (e.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+    });
+</script>
 </body>
 
 </html>

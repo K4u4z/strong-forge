@@ -36,29 +36,39 @@
             </div>
         </nav>
 
-        <main>
-            <div class="exercises-container">
-                <h2>Personais</h2>
+<main>
+        <section class="exercise-categories">
+                    <h2>Personais</h2>
 
+<div>
+<br>
+</div>
 
-                    <c:forEach var="personal" items="${personais}">
-                        <div class="exercise-card">
-                            <img src="${personal.image}" alt="personal_imagem">
-                            <h3>${personal.nome}</h3>
-                            <h4>${personal.especialidade}</h4>
-                            <p>${personal.descricao}</p>
+                    <section class="exercises-container">
+                        <c:forEach var="personal" items="${personais}">
+                            <div class="exercise-card">
+                                <div class="exercise-photo">
+                                    <img src="${personal.image}" alt="personal_imagem">
+                                </div>
+                                <div class="exercise-info">
+                                    <h3>${personal.nome}</h3>
+                                    <h4>${personal.especialidade}</h4>
+                                    <p>${personal.descricao}</p>
 
-                            <form action="/detalhesPersonalById" method="GET">
-                                <input type="hidden" name="id" value="${personal.id}">
-                                <button type="submit" class="action-btn delete-btn">Ver perfil</button>
-                            </form>
-                        </div>
-                    </c:forEach>
-                </div>
+                                    <form action="/detalhesPersonalById" method="GET">
+                                        <input type="hidden" name="id" value="${personal.id}">
+                                        <button type="submit" class="action-btn">Ver perfil</button>
+                                    </form>
+
+                                </div>
+                            </div>
+                            <br>
+                        </c:forEach>
+                    </div>
+                </section>
             </div>
-        </main>
-    </div>
-
+            </section>
+</main>
     <footer>
         <div class="footer-content">
             <div class="footer-section">

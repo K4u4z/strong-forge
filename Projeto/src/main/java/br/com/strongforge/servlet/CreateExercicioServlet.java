@@ -13,10 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static org.apache.commons.fileupload.servlet.ServletFileUpload.isMultipartContent;
 
@@ -24,13 +21,20 @@ import static org.apache.commons.fileupload.servlet.ServletFileUpload.isMultipar
 public class CreateExercicioServlet extends HttpServlet {
 
     @Override
-
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
 
         Map<String, String> parameters = uploadImage(req);
 
-        String exercicioId = parameters.get("id");
+        // Obter o ID do exercício dos parâmetros (pode ser null para criação)
+        String exercicioId = parameters.get("exercicio-id");
+
+        // Se não houver ID, gerar um novo (caso de criação)
+        if(exercicioId == null || exercicioId.isBlank()) {
+            Random random = new Random();
+            exercicioId = String.valueOf(random.nextInt(Integer.MAX_VALUE));
+        }
+
         String exercicioName = parameters.get("exercicio-name");
         String exercicioAgrup = parameters.get("exercicio-agrupamento");
         String exercicioNivel = parameters.get("exercicio-nivel");
@@ -38,15 +42,28 @@ public class CreateExercicioServlet extends HttpServlet {
         String exercicioImage = parameters.get("image");
         String exercicioVideo = parameters.get("exercicio-video");
 
+        Exercicio exercicio = new Exercicio(
+                exercicioId,
+                exercicioName,
+                exercicioAgrup,
+                exercicioNivel,
+                exercicioDesc,
+                exercicioImage,
+                exercicioVideo
+        );
 
-        Exercicio exercicio = new Exercicio("0", exercicioName, exercicioAgrup, exercicioNivel, exercicioDesc, exercicioImage, exercicioVideo);
+        ExercicioDao exercicioDao = new ExercicioDao();
 
-        new ExercicioDao().createExercicio(exercicio);
-
-
+        if (exercicioId == null || exercicioId.isBlank()) {
+            exercicioDao.createExercicio(exercicio);
+        } else {
+            exercicioDao.updateExercicio(exercicio);
+            System.out.println(exercicioId);
+        }
 
         resp.sendRedirect("/findAllExercicio");
     }
+
 
 
 

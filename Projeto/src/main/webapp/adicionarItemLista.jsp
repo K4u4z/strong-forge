@@ -33,7 +33,6 @@
                                          <c:if test="${sessionScope.loggedUsuario != null}">
                                                       <a href="admin.jsp">Admin</a>
                                                        </c:if>
-                         </c:if>
 
                     </div>
                 </nav>
