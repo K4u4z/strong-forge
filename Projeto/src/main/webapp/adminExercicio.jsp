@@ -35,14 +35,8 @@
                     </div>
                 </nav>
   <div>
-  <img src="img/icon.png" alt="usuario">
-  <c:if test="${sessionScope.loggedUsuario != null}">
-              <div class="user-info">
-                  <span>Bem-vindo, <strong>${sessionScope.loggedUser}</strong></span>
-                  <a href="/logout" class="logout-btn">Logout</a>
-              </div>
-          </c:if>
-           <a href="/cadExerc.jsp">Adicionar exercicio</a>
+
+           <a href="/cadExerc.jsp" class="logout-btn">Adicionar exercicio</a>
 <div class="content-block">
         <h1 style="color: #343a40; border-bottom: 2px solid #28a745; padding-bottom: 10px;">Gerenciamento de Exercicios</h1>
 
@@ -64,10 +58,7 @@
                         <td>
                         <span class="divider">|</span>
 
-                       <form action="/editarExercicio" method="GET">
-                           <input type="hidden" name="id" value="${Exercicio.id}">
-                           <button type="submit">Editar</button>
-                       </form>
+
                         <br>
                             <form action="/delete-exercicio" method="post" style="display: inline;">
                                 <input type="hidden" id="id" name="id" value="${Exercicio.id}">

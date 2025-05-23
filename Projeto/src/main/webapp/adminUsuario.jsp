@@ -41,7 +41,7 @@
                   <a href="/logout" class="logout-btn">Logout</a>
               </div>
           </c:if>
-           <a href="/cadastro.jsp">Adicionar usuario</a>
+           <a href="/cadastro.jsp" class="logout-btn">Adicionar usuario</a>
 <div class="content-block">
         <h1 style="color: #343a40; border-bottom: 2px solid #28a745; padding-bottom: 10px;">Gerenciamento de Usuários</h1>
 

@@ -34,7 +34,7 @@ public class AdicionarExercicios extends HttpServlet {
         ListaDao listaDAO = new ListaDao();
         listaDAO.cadastrarExerciciosLista(listaId, idsExercicios);
 
-        resp.sendRedirect("listas.jsp");
+        resp.sendRedirect("/findAllLista");
     }
 
 
