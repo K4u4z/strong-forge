@@ -34,7 +34,6 @@
                                                       <a href="admin.jsp">Admin</a>
                                                        </c:if>
 
-
                     </div>
                 </nav>
 

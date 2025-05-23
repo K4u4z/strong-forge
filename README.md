@@ -82,35 +82,39 @@
 <h2>Telas</h2>
 <h2>Tela de login</h2>
 
-![Login](https://github.com/user-attachments/assets/63f58756-b6c5-4a58-8c62-fdbff4b105b2)
+![Login](https://github.com/K4u4z/strong-forge/blob/main/Telas/Login.png?raw=true)
 
 <h2>Tela de Cadastro</h2>
 
-![Cadastro](https://github.com/user-attachments/assets/0c14f97f-d4b6-402b-97bc-b44e84044e0d)
+![Cadastro](https://github.com/K4u4z/strong-forge/blob/main/Telas/Cadastro.png?raw=true)
 
 <h2>Tela de Home</h2>
 
-![Home](https://github.com/user-attachments/assets/259b0616-7981-4666-b1e5-ae332a845851)
+![Home](https://github.com/K4u4z/strong-forge/blob/main/Telas/Home.png?raw=true)
 
 <h2>Tela de Exercicios</h2>
 
-![Exercicios](https://github.com/user-attachments/assets/d480103c-88f3-4177-8d26-34c7798395c6)
+![Exercicios](https://github.com/K4u4z/strong-forge/blob/main/Telas/Exercicios.png?raw=true)
 
 <h2>Tela Cronograma de treinos</h2>
 
-![Cronograma Treino](https://github.com/user-attachments/assets/3dd2fd34-fc00-4d25-904b-8bfb5d9e47c5)
+![Cronograma Treino](https://github.com/K4u4z/strong-forge/blob/main/Telas/Cronograma.png?raw=true)
 
 <h2>Tela de Personais</h2>
 
-![Personal](https://github.com/user-attachments/assets/61d2a05e-c7a2-47a1-b3f9-594234e14039)
+![Personal](https://github.com/K4u4z/strong-forge/blob/main/Telas/Personais.png?raw=true)
 
 <h2>Tela Perfil do Personal</h2>
 
-![Perfil personal](https://github.com/user-attachments/assets/5408f8b6-fc01-4669-bd94-ff62e517c8f3)
+![Perfil personal](https://github.com/K4u4z/strong-forge/blob/main/Telas/Perfil%20personal.png?raw=true)
 
-<h2>Tela de exercicio</h2>
+<h2>Tela Controle usuario</h2>
 
-![Exercicio](https://github.com/user-attachments/assets/23fd9877-efcd-4268-a895-6678a219f90d)
+![Controle usuario](https://github.com/K4u4z/strong-forge/blob/main/Telas/Controle%20usuario.png?raw=true)
+
+<h2>Tela Administração</h2>
+
+![Administração](https://github.com/K4u4z/strong-forge/blob/main/Telas/Administra%C3%A7%C3%A3o.png?raw=true)
 
 
 
